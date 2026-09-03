@@ -1,859 +1,1132 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Abei Solution | Premium Web Design</title>
 
-<meta name="description" content="Abei Solution - Premium web design, websites, hosting and domains.">
+  <meta
+    name="description"
+    content="Abei Solution creates premium modern websites for businesses."
+  >
 
-<title>Abei Solution | Premium Digital Solutions</title>
+  <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 </head>
 
 <body>
 
-
-<div class="background">
-    <div class="grid"></div>
+  <!-- BACKGROUND -->
+  <div class="background">
     <div class="orb orb-one"></div>
     <div class="orb orb-two"></div>
     <div class="orb orb-three"></div>
-</div>
+    <div class="grid"></div>
+  </div>
 
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-glow"></div>
 
-<!-- NAVIGATION -->
-
-<header class="navbar" id="navbar">
+  <!-- NAVIGATION -->
+  <header class="navbar" id="navbar">
 
     <a href="#home" class="logo">
+      <div class="logo-mark">A</div>
 
-        <div class="logo-mark">A</div>
-
-        <div class="logo-name">
-            <strong>ABEI</strong>
-            <span>SOLUTION</span>
-        </div>
-
+      <div class="logo-text">
+        <span>ABEI</span>
+        <small>SOLUTION</small>
+      </div>
     </a>
 
+    <nav class="nav-links">
 
-    <nav class="desktop-nav">
+      <a href="#home" data-en="Home" data-al="Kreu">
+        Home
+      </a>
 
-        <a href="#home" data-en="Home" data-al="Kreu">Home</a>
+      <a href="#services" data-en="Services" data-al="Shërbimet">
+        Services
+      </a>
 
-        <a href="#services" data-en="Services" data-al="Shërbimet">Services</a>
+      <a href="#projects" data-en="Projects" data-al="Projektet">
+        Projects
+      </a>
 
-        <a href="#projects" data-en="Projects" data-al="Projektet">Projects</a>
+      <a href="#process" data-en="Process" data-al="Procesi">
+        Process
+      </a>
 
-        <a href="#process" data-en="Process" data-al="Procesi">Process</a>
-
-        <a href="#contact" data-en="Contact" data-al="Kontakt">Contact</a>
+      <a href="#contact" data-en="Contact" data-al="Kontakt">
+        Contact
+      </a>
 
     </nav>
 
+    <div class="nav-actions">
 
-    <div class="nav-right">
+      <button class="language-toggle" id="languageToggle">
+        <span class="lang-active" id="langEN">EN</span>
+        <span>/</span>
+        <span id="langAL">AL</span>
+      </button>
 
-        <button class="language-button" id="languageSwitch" type="button">
-            <span id="currentLanguage">EN</span>
-            <span class="language-line">/</span>
-            <span>AL</span>
-        </button>
+      <a
+        href="#contact"
+        class="nav-button"
+        data-en="Let's Talk"
+        data-al="Na Kontakto"
+      >
+        Let's Talk
+      </a>
 
-
-        <a href="#contact" class="nav-button" data-en="Let's Talk" data-al="Flasim">
-            Let's Talk
-        </a>
-
-
-        <button class="menu-button" id="menuButton" type="button" aria-label="Menu">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </button>
+      <button class="mobile-menu" id="mobileMenu">
+        <span></span>
+        <span></span>
+      </button>
 
     </div>
 
-</header>
+  </header>
 
 
-<!-- MOBILE MENU -->
-
-<nav class="mobile-menu" id="mobileMenu">
+  <!-- MOBILE NAVIGATION -->
+  <div class="mobile-navigation" id="mobileNavigation">
 
     <a href="#home" data-en="Home" data-al="Kreu">Home</a>
-
     <a href="#services" data-en="Services" data-al="Shërbimet">Services</a>
-
     <a href="#projects" data-en="Projects" data-al="Projektet">Projects</a>
-
     <a href="#process" data-en="Process" data-al="Procesi">Process</a>
-
     <a href="#contact" data-en="Contact" data-al="Kontakt">Contact</a>
 
-</nav>
+  </div>
 
 
-<main>
+  <main>
 
 
     <!-- HERO -->
-
     <section class="hero" id="home">
 
-        <div class="hero-content">
+      <div class="hero-content">
 
-            <div class="eyebrow reveal">
+        <div class="hero-badge reveal">
 
-                <span class="online-dot"></span>
+          <span class="badge-dot"></span>
 
-                <span
-                    data-en="DIGITAL SOLUTIONS FOR MODERN BUSINESSES"
-                    data-al="ZGJIDHJE DIGJITALE PËR BIZNESE MODERNE"
-                >
-                    DIGITAL SOLUTIONS FOR MODERN BUSINESSES
-                </span>
+          <span
+            data-en="Premium Digital Experiences"
+            data-al="Eksperienca Dixhitale Premium"
+          >
+            Premium Digital Experiences
+          </span>
 
-            </div>
-
-
-            <h1 class="hero-title reveal">
-
-                <span
-                    data-en="We build websites that"
-                    data-al="Ne krijojmë faqe që"
-                >
-                    We build websites that
-                </span>
-
-                <span
-                    class="gradient-text"
-                    data-en="make businesses stand out."
-                    data-al="e bëjnë biznesin të dallohet."
-                >
-                    make businesses stand out.
-                </span>
-
-            </h1>
+        </div>
 
 
-            <p
-                class="hero-description reveal"
-                data-en="Premium websites and digital experiences designed to make your business look professional, modern and unforgettable."
-                data-al="Faqe premium dhe eksperienca digjitale të krijuara për ta bërë biznesin tuaj të duket profesional, modern dhe i paharrueshëm."
+        <h1 class="hero-title reveal">
+
+          <span
+            data-en="Websites built to"
+            data-al="Website të krijuara për të"
+          >
+            Websites built to
+          </span>
+
+          <span class="gradient-text"
+            data-en="stand out."
+            data-al="dalluar."
+          >
+            stand out.
+          </span>
+
+        </h1>
+
+
+        <p
+          class="hero-description reveal"
+          data-en="We design modern, premium websites that help businesses create a stronger online presence and make a lasting first impression."
+          data-al="Ne krijojmë website moderne dhe premium që ndihmojnë bizneset të krijojnë një prezencë më të fortë online dhe të lënë një përshtypje të qëndrueshme."
+        >
+          We design modern, premium websites that help businesses create a stronger online presence and make a lasting first impression.
+        </p>
+
+
+        <div class="hero-buttons reveal">
+
+          <a href="#projects" class="primary-button">
+
+            <span
+              data-en="Explore Our Work"
+              data-al="Shiko Projektet"
             >
-                Premium websites and digital experiences designed to make your business look professional, modern and unforgettable.
-            </p>
+              Explore Our Work
+            </span>
+
+            <span class="button-arrow">↗</span>
+
+          </a>
 
 
-            <div class="hero-buttons reveal">
+          <a href="#contact" class="secondary-button">
 
-                <a href="#contact" class="primary-button">
+            <span
+              data-en="Start a Project"
+              data-al="Fillo një Projekt"
+            >
+              Start a Project
+            </span>
 
-                    <span
-                        data-en="Start Your Project"
-                        data-al="Fillo Projektin"
-                    >
-                        Start Your Project
-                    </span>
-
-                    <span>↗</span>
-
-                </a>
-
-
-                <a href="#projects" class="secondary-button">
-
-                    <span
-                        data-en="Explore Projects"
-                        data-al="Shiko Projektet"
-                    >
-                        Explore Projects
-                    </span>
-
-                </a>
-
-            </div>
-
-
-            <div class="hero-stats reveal">
-
-                <div>
-                    <strong>100%</strong>
-                    <span data-en="Custom Design" data-al="Dizajn Personal">
-                        Custom Design
-                    </span>
-                </div>
-
-                <div>
-                    <strong>24/7</strong>
-                    <span data-en="Online Presence" data-al="Prezencë Online">
-                        Online Presence
-                    </span>
-                </div>
-
-                <div>
-                    <strong>∞</strong>
-                    <span data-en="Possibilities" data-al="Mundësi">
-                        Possibilities
-                    </span>
-                </div>
-
-            </div>
+          </a>
 
         </div>
 
 
-        <!-- HERO VISUAL -->
+        <!-- HERO STATS -->
+        <div class="hero-mini-stats reveal">
 
-        <div class="hero-visual reveal">
+          <div>
+            <strong>100%</strong>
 
-            <div class="hero-glow"></div>
+            <span
+              data-en="Custom Design"
+              data-al="Dizajn Personal"
+            >
+              Custom Design
+            </span>
+          </div>
 
-            <div class="browser">
+          <div class="stat-line"></div>
 
-                <div class="browser-header">
+          <div>
+            <strong>EN / AL</strong>
 
-                    <div class="browser-dots">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+            <span
+              data-en="Language Support"
+              data-al="Mbështetje Gjuhësore"
+            >
+              Language Support
+            </span>
+          </div>
 
-                    <div class="browser-address">
-                        abeisolution.com
-                    </div>
+          <div class="stat-line"></div>
 
-                </div>
+          <div>
+            <strong>24/7</strong>
 
-
-                <div class="browser-body">
-
-                    <div class="mockup-nav">
-
-                        <strong>ABEI</strong>
-
-                        <div>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-
-                    </div>
-
-
-                    <div class="mockup-content">
-
-                        <div class="mockup-left">
-
-                            <div class="mockup-label"></div>
-
-                            <div class="mockup-title"></div>
-                            <div class="mockup-title short"></div>
-
-                            <div class="mockup-text"></div>
-                            <div class="mockup-text short"></div>
-
-                            <div class="mockup-button"></div>
-
-                        </div>
-
-
-                        <div class="mockup-image">
-                            <div class="mockup-image-glow"></div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="floating-card card-top">
-
-                <span class="floating-icon">✦</span>
-
-                <div>
-                    <strong>Premium Design</strong>
-                    <small>Built to impress</small>
-                </div>
-
-            </div>
-
-
-            <div class="floating-card card-bottom">
-
-                <span class="check-icon">✓</span>
-
-                <div>
-                    <strong>Ready to launch</strong>
-                    <small>Fast • Responsive</small>
-                </div>
-
-            </div>
+            <span
+              data-en="Online Presence"
+              data-al="Prezencë Online"
+            >
+              Online Presence
+            </span>
+          </div>
 
         </div>
+
+      </div>
+
+
+      <!-- HERO VISUAL -->
+      <div class="hero-visual reveal">
+
+        <div class="hero-glow"></div>
+
+        <div class="website-window">
+
+          <div class="window-top">
+
+            <div class="window-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="window-url">
+              abeisolution.com
+            </div>
+
+          </div>
+
+
+          <div class="window-content">
+
+            <div class="visual-navbar">
+
+              <div class="visual-logo">
+                A.
+              </div>
+
+              <div class="visual-nav-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+            </div>
+
+
+            <div class="visual-hero">
+
+              <div class="visual-pill"></div>
+
+              <div class="visual-title large"></div>
+              <div class="visual-title medium"></div>
+
+              <div class="visual-description"></div>
+              <div class="visual-description short"></div>
+
+              <div class="visual-button"></div>
+
+            </div>
+
+
+            <div class="visual-cards">
+
+              <div class="visual-card card-blue"></div>
+              <div class="visual-card card-purple"></div>
+              <div class="visual-card card-pink"></div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="floating-card floating-one">
+
+          <span class="floating-icon">✦</span>
+
+          <div>
+            <strong
+              data-en="Premium Design"
+              data-al="Dizajn Premium"
+            >
+              Premium Design
+            </strong>
+
+            <small
+              data-en="Built with detail"
+              data-al="Krijuar me detaje"
+            >
+              Built with detail
+            </small>
+          </div>
+
+        </div>
+
+
+        <div class="floating-card floating-two">
+
+          <span class="online-dot"></span>
+
+          <div>
+            <strong
+              data-en="Ready for the Web"
+              data-al="Gati për Online"
+            >
+              Ready for the Web
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </section>
 
-
-    <!-- SERVICES STRIP -->
-
-    <section class="marquee-section">
-
-        <div class="marquee-track">
-
-            <span>WEB DESIGN</span><b>✦</b>
-            <span>WEBSITES</span><b>✦</b>
-            <span>HOSTING</span><b>✦</b>
-            <span>DOMAINS</span><b>✦</b>
-
-            <span>WEB DESIGN</span><b>✦</b>
-            <span>WEBSITES</span><b>✦</b>
-            <span>HOSTING</span><b>✦</b>
-            <span>DOMAINS</span><b>✦</b>
-
-        </div>
-
-    </section>
 
 
     <!-- SERVICES -->
+    <section class="section services" id="services">
 
-    <section class="section" id="services">
+      <div class="section-heading reveal">
 
-        <div class="section-heading reveal">
+        <div class="section-label">
+          <span></span>
 
-            <div>
-
-                <span class="section-label" data-en="WHAT WE DO" data-al="ÇFARË BËJMË">
-                    WHAT WE DO
-                </span>
-
-                <h2
-                    data-en="Everything you need to go digital."
-                    data-al="Gjithçka që ju nevojitet për të kaluar online."
-                >
-                    Everything you need to go digital.
-                </h2>
-
-            </div>
-
-
-            <p
-                data-en="From the first idea to launching your website, we help create your complete digital presence."
-                data-al="Nga ideja e parë deri te publikimi i faqes, ne ndihmojmë të krijoni prezencën tuaj të plotë digjitale."
-            >
-                From the first idea to launching your website, we help create your complete digital presence.
-            </p>
-
+          <span
+            data-en="WHAT WE DO"
+            data-al="ÇFARË OFROJMË"
+          >
+            WHAT WE DO
+          </span>
         </div>
 
 
-        <div class="services-grid">
+        <h2
+          data-en="Everything you need for a powerful online presence."
+          data-al="Gjithçka që ju nevojitet për një prezencë të fuqishme online."
+        >
+          Everything you need for a powerful online presence.
+        </h2>
 
-            <article class="service-card reveal">
-
-                <span class="service-number">01</span>
-
-                <div class="service-icon">✦</div>
-
-                <h3 data-en="Web Design" data-al="Web Dizajn">
-                    Web Design
-                </h3>
-
-                <p
-                    data-en="Modern and visually powerful designs created specifically for your business."
-                    data-al="Dizajne moderne dhe vizualisht të fuqishme për biznesin tuaj."
-                >
-                    Modern and visually powerful designs created specifically for your business.
-                </p>
-
-            </article>
+      </div>
 
 
-            <article class="service-card reveal">
+      <div class="services-grid">
 
-                <span class="service-number">02</span>
+        <article class="service-card reveal">
 
-                <div class="service-icon">◈</div>
+          <div class="service-icon">✦</div>
 
-                <h3 data-en="Websites" data-al="Faqe Web">
-                    Websites
-                </h3>
+          <h3
+            data-en="Web Design"
+            data-al="Web Dizajn"
+          >
+            Web Design
+          </h3>
 
-                <p
-                    data-en="Fast, responsive and professional websites built for every device."
-                    data-al="Faqe të shpejta, responsive dhe profesionale për çdo pajisje."
-                >
-                    Fast, responsive and professional websites built for every device.
-                </p>
+          <p
+            data-en="Modern and visually impressive websites designed around your business."
+            data-al="Website moderne dhe vizualisht mbresëlënëse të krijuara për biznesin tuaj."
+          >
+            Modern and visually impressive websites designed around your business.
+          </p>
 
-            </article>
+          <div class="service-number">01</div>
 
-
-            <article class="service-card reveal">
-
-                <span class="service-number">03</span>
-
-                <div class="service-icon">◎</div>
-
-                <h3 data-en="Hosting" data-al="Hosting">
-                    Hosting
-                </h3>
-
-                <p
-                    data-en="Reliable solutions to keep your website online and available."
-                    data-al="Zgjidhje të besueshme për ta mbajtur faqen tuaj online."
-                >
-                    Reliable solutions to keep your website online and available.
-                </p>
-
-            </article>
+        </article>
 
 
-            <article class="service-card reveal">
+        <article class="service-card reveal">
 
-                <span class="service-number">04</span>
+          <div class="service-icon">◈</div>
 
-                <div class="service-icon">◉</div>
+          <h3
+            data-en="Website Development"
+            data-al="Zhvillim Website"
+          >
+            Website Development
+          </h3>
 
-                <h3 data-en="Domains" data-al="Domene">
-                    Domains
-                </h3>
+          <p
+            data-en="Fast, responsive websites that work beautifully on every screen."
+            data-al="Website të shpejta dhe responsive që funksionojnë bukur në çdo ekran."
+          >
+            Fast, responsive websites that work beautifully on every screen.
+          </p>
 
-                <p
-                    data-en="Find the right domain and create a strong online identity."
-                    data-al="Gjeni domain-in e duhur dhe krijoni identitetin tuaj online."
-                >
-                    Find the right domain and create a strong online identity.
-                </p>
+          <div class="service-number">02</div>
 
-            </article>
+        </article>
 
-        </div>
+
+        <article class="service-card reveal">
+
+          <div class="service-icon">◉</div>
+
+          <h3
+            data-en="Hosting"
+            data-al="Hosting"
+          >
+            Hosting
+          </h3>
+
+          <p
+            data-en="Helping your website stay online, accessible and ready for visitors."
+            data-al="Ndihmë që website juaj të qëndrojë online dhe i aksesueshëm për vizitorët."
+          >
+            Helping your website stay online, accessible and ready for visitors.
+          </p>
+
+          <div class="service-number">03</div>
+
+        </article>
+
+
+        <article class="service-card reveal">
+
+          <div class="service-icon">◎</div>
+
+          <h3
+            data-en="Domain"
+            data-al="Domain"
+          >
+            Domain
+          </h3>
+
+          <p
+            data-en="Guidance with choosing and connecting the right domain for your business."
+            data-al="Ndihmë për zgjedhjen dhe lidhjen e domain-it të duhur për biznesin tuaj."
+          >
+            Guidance with choosing and connecting the right domain for your business.
+          </p>
+
+          <div class="service-number">04</div>
+
+        </article>
+
+      </div>
 
     </section>
+
 
 
     <!-- PROJECTS -->
+    <section class="section projects" id="projects">
 
-    <section class="section projects-section" id="projects">
+      <div class="section-heading projects-heading reveal">
 
-        <div class="section-heading reveal">
+        <div>
 
-            <div>
+          <div class="section-label">
+            <span></span>
 
-                <span class="section-label" data-en="OUR WORK" data-al="PUNËT TONA">
-                    OUR WORK
-                </span>
-
-                <h2
-                    data-en="Concepts built with ambition."
-                    data-al="Koncepte të krijuara me ambicie."
-                >
-                    Concepts built with ambition.
-                </h2>
-
-            </div>
-
-
-            <p
-                data-en="A selection of premium website concepts created to demonstrate our design direction and capabilities."
-                data-al="Një përzgjedhje konceptesh premium që tregojnë drejtimin dhe aftësitë tona në dizajn."
+            <span
+              data-en="SELECTED WORK"
+              data-al="PROJEKTET"
             >
-                A selection of premium website concepts created to demonstrate our design direction and capabilities.
-            </p>
-
-        </div>
-
-
-        <div class="projects-grid">
-
-
-            <!-- FINE DINING -->
-
-            <article class="project-card reveal" data-project="dining">
-
-                <div class="project-image dining-image">
-
-                    <div class="project-preview dining-preview">
-
-                        <span>THE ART OF TASTE</span>
-
-                        <h3>VELORA</h3>
-
-                        <p>Fine Dining Experience</p>
-
-                        <div class="preview-button">
-                            RESERVE A TABLE
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="project-details">
-
-                    <div>
-
-                        <span>01 — RESTAURANT</span>
-
-                        <h3
-                            data-en="Fine Dining Concept"
-                            data-al="Koncept Fine Dining"
-                        >
-                            Fine Dining Concept
-                        </h3>
-
-                    </div>
-
-                    <button class="project-open" type="button">
-                        ↗
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- AUTOMOTIVE -->
-
-            <article class="project-card reveal" data-project="automotive">
-
-                <div class="project-image automotive-image">
-
-                    <div class="project-preview automotive-preview">
-
-                        <span>PERFORMANCE REDEFINED</span>
-
-                        <h3>VELOCITY</h3>
-
-                        <div class="car-shape"></div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="project-details">
-
-                    <div>
-
-                        <span>02 — AUTOMOTIVE</span>
-
-                        <h3
-                            data-en="Automotive Concept"
-                            data-al="Koncept Automotive"
-                        >
-                            Automotive Concept
-                        </h3>
-
-                    </div>
-
-                    <button class="project-open" type="button">
-                        ↗
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- HOTEL -->
-
-            <article class="project-card reveal" data-project="hotel">
-
-                <div class="project-image hotel-image">
-
-                    <div class="project-preview hotel-preview">
-
-                        <span>HEAVEN ON EARTH</span>
-
-                        <h3>PARADISE</h3>
-
-                        <p>Luxury Hotel Experience</p>
-
-                        <div class="hotel-line"></div>
-
-                        <div class="preview-button">
-                            EXPLORE THE RESORT
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="project-details">
-
-                    <div>
-
-                        <span>03 — HOSPITALITY</span>
-
-                        <h3
-                            data-en="Luxury Hotel Concept"
-                            data-al="Koncept Hotel Luksoz"
-                        >
-                            Luxury Hotel Concept
-                        </h3>
-
-                    </div>
-
-                    <button class="project-open" type="button">
-                        ↗
-                    </button>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- PROCESS -->
-
-    <section class="section process-section" id="process">
-
-        <div class="process-intro reveal">
-
-            <span class="section-label" data-en="HOW IT WORKS" data-al="SI FUNKSIONON">
-                HOW IT WORKS
+              SELECTED WORK
             </span>
-
-            <h2
-                data-en="Simple process.<br>Serious results."
-                data-al="Proces i thjeshtë.<br>Rezultate serioze."
-            >
-                Simple process.<br>Serious results.
-            </h2>
-
-        </div>
-
-
-        <div class="process-list">
-
-            <div class="process-item reveal">
-
-                <span>01</span>
-
-                <div>
-
-                    <h3 data-en="Tell us about your idea" data-al="Na tregoni idenë tuaj">
-                        Tell us about your idea
-                    </h3>
-
-                    <p
-                        data-en="Tell us what your business does and what you want to achieve."
-                        data-al="Na tregoni çfarë bën biznesi juaj dhe çfarë dëshironi të arrini."
-                    >
-                        Tell us what your business does and what you want to achieve.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="process-item reveal">
-
-                <span>02</span>
-
-                <div>
-
-                    <h3 data-en="We design the experience" data-al="Ne krijojmë eksperiencën">
-                        We design the experience
-                    </h3>
-
-                    <p
-                        data-en="We create a visual direction specifically for your brand."
-                        data-al="Ne krijojmë një drejtim vizual posaçërisht për markën tuaj."
-                    >
-                        We create a visual direction specifically for your brand.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="process-item reveal">
-
-                <span>03</span>
-
-                <div>
-
-                    <h3 data-en="We build the website" data-al="Ne krijojmë faqen">
-                        We build the website
-                    </h3>
-
-                    <p
-                        data-en="Your website is developed to work smoothly across modern devices."
-                        data-al="Faqja juaj krijohet për të funksionuar mirë në pajisjet moderne."
-                    >
-                        Your website is developed to work smoothly across modern devices.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="process-item reveal">
-
-                <span>04</span>
-
-                <div>
-
-                    <h3 data-en="Ready to launch" data-al="Gati për publikim">
-                        Ready to launch
-                    </h3>
-
-                    <p
-                        data-en="Your new digital presence is ready for the world."
-                        data-al="Prezenca juaj e re digjitale është gati për botën."
-                    >
-                        Your new digital presence is ready for the world.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section class="contact-section" id="contact">
-
-        <div class="contact-content reveal">
-
-            <span class="section-label" data-en="LET'S BUILD SOMETHING" data-al="LE TË KRIJOJMË DIÇKA">
-                LET'S BUILD SOMETHING
-            </span>
-
-            <h2
-                data-en="Your business deserves<br>a better website."
-                data-al="Biznesi juaj meriton<br>një faqe më të mirë."
-            >
-                Your business deserves<br>a better website.
-            </h2>
-
-            <p
-                data-en="Have an idea? Let's talk about what we can create together."
-                data-al="Keni një ide? Le të flasim për atë që mund të krijojmë së bashku."
-            >
-                Have an idea? Let's talk about what we can create together.
-            </p>
-
-
-            <div class="contact-buttons">
-
-                <a href="mailto:info.abeisolution@gmail.com" class="primary-button">
-
-                    <span data-en="Email Us" data-al="Na Dërgoni Email">
-                        Email Us
-                    </span>
-
-                    <span>↗</span>
-
-                </a>
-
-
-                <a
-                    href="https://www.instagram.com/abeisolution/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="instagram-button"
-                >
-                    Instagram ↗
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<!-- PROJECT MODAL -->
-
-<div class="modal" id="projectModal">
-
-    <div class="modal-backdrop" id="modalBackdrop"></div>
-
-    <div class="modal-box">
-
-        <button class="modal-close" id="modalClose" type="button" aria-label="Close">
-            ×
-        </button>
-
-        <div class="modal-content" id="modalContent"></div>
-
-    </div>
-
-</div>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    <div class="footer-top">
-
-        <div class="footer-brand">
-
-            <div class="logo-mark">A</div>
-
-            <strong>ABEI SOLUTION</strong>
+          </div>
+
+
+          <h2
+            data-en="Concepts built with ambition."
+            data-al="Koncepte të krijuara me ambicie."
+          >
+            Concepts built with ambition.
+          </h2>
 
         </div>
 
 
         <p
-            data-en="Web Design • Websites • Hosting • Domains"
-            data-al="Web Dizajn • Faqe Web • Hosting • Domene"
+          data-en="A selection of website concepts demonstrating different styles, industries and experiences."
+          data-al="Një koleksion konceptesh që tregojnë stile, industri dhe eksperienca të ndryshme."
         >
-            Web Design • Websites • Hosting • Domains
+          A selection of website concepts demonstrating different styles, industries and experiences.
         </p>
+
+      </div>
+
+
+      <div class="projects-grid">
+
+
+        <!-- FINE DINING -->
+        <a
+          href="Fine-Dining-Concept/index.html"
+          class="project-card project-large reveal"
+        >
+
+          <div class="project-visual fine-dining">
+
+            <div class="project-overlay"></div>
+
+            <div class="project-preview">
+
+              <span class="preview-small">FINE DINING</span>
+
+              <h3>THE ART OF TASTE</h3>
+
+              <div class="preview-line"></div>
+
+              <span class="preview-text">A PREMIUM EXPERIENCE</span>
+
+            </div>
+
+          </div>
+
+
+          <div class="project-info">
+
+            <div>
+
+              <span class="project-category">
+                LUXURY • RESTAURANT
+              </span>
+
+              <h3>Fine Dining Concept</h3>
+
+            </div>
+
+            <span class="project-arrow">↗</span>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- AUTOMOTIVE -->
+        <a
+          href="Automotive-Concept/index.html"
+          class="project-card reveal"
+        >
+
+          <div class="project-visual automotive">
+
+            <div class="auto-light"></div>
+
+            <div class="auto-content">
+
+              <span>PERFORMANCE</span>
+
+              <h3>DRIVE<br>BEYOND.</h3>
+
+            </div>
+
+          </div>
+
+
+          <div class="project-info">
+
+            <div>
+
+              <span class="project-category">
+                AUTOMOTIVE • PERFORMANCE
+              </span>
+
+              <h3>Automotive Concept</h3>
+
+            </div>
+
+            <span class="project-arrow">↗</span>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- HOTEL -->
+        <a
+          href="hotel-website/index.html"
+          class="project-card reveal"
+        >
+
+          <div class="project-visual hotel">
+
+            <div class="hotel-sky"></div>
+
+            <div class="hotel-content">
+
+              <span>ESCAPE THE ORDINARY</span>
+
+              <h3>HEAVEN<br>ON EARTH</h3>
+
+            </div>
+
+          </div>
+
+
+          <div class="project-info">
+
+            <div>
+
+              <span class="project-category">
+                HOSPITALITY • LUXURY
+              </span>
+
+              <h3>Hotel Website</h3>
+
+            </div>
+
+            <span class="project-arrow">↗</span>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- STATS -->
+    <section class="stats-section">
+
+      <div class="stats-container">
+
+        <div class="stat-box reveal">
+
+          <strong class="counter" data-target="3">0</strong>
+
+          <span
+            data-en="Concept Projects"
+            data-al="Projekte Koncept"
+          >
+            Concept Projects
+          </span>
+
+        </div>
+
+
+        <div class="stat-box reveal">
+
+          <strong>100%</strong>
+
+          <span
+            data-en="Custom Built"
+            data-al="Të Personalizuara"
+          >
+            Custom Built
+          </span>
+
+        </div>
+
+
+        <div class="stat-box reveal">
+
+          <strong>2</strong>
+
+          <span
+            data-en="Languages"
+            data-al="Gjuhë"
+          >
+            Languages
+          </span>
+
+        </div>
+
+
+        <div class="stat-box reveal">
+
+          <strong>∞</strong>
+
+          <span
+            data-en="Possibilities"
+            data-al="Mundësi"
+          >
+            Possibilities
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PROCESS -->
+    <section class="section process" id="process">
+
+      <div class="section-heading reveal">
+
+        <div class="section-label">
+
+          <span></span>
+
+          <span
+            data-en="HOW IT WORKS"
+            data-al="SI FUNKSIONON"
+          >
+            HOW IT WORKS
+          </span>
+
+        </div>
+
+
+        <h2
+          data-en="From idea to online."
+          data-al="Nga ideja në online."
+        >
+          From idea to online.
+        </h2>
+
+      </div>
+
+
+      <div class="process-list">
+
+
+        <div class="process-item reveal">
+
+          <div class="process-number">01</div>
+
+          <div class="process-content">
+
+            <h3
+              data-en="Discuss"
+              data-al="Diskutojmë"
+            >
+              Discuss
+            </h3>
+
+            <p
+              data-en="We talk about your business, goals and what your website needs."
+              data-al="Diskutojmë biznesin tuaj, qëllimet dhe çfarë i nevojitet website-it tuaj."
+            >
+              We talk about your business, goals and what your website needs.
+            </p>
+
+          </div>
+
+          <div class="process-arrow">↘</div>
+
+        </div>
+
+
+        <div class="process-item reveal">
+
+          <div class="process-number">02</div>
+
+          <div class="process-content">
+
+            <h3
+              data-en="Design"
+              data-al="Dizajn"
+            >
+              Design
+            </h3>
+
+            <p
+              data-en="Your website is designed around your brand and the experience you want to create."
+              data-al="Website-i juaj krijohet sipas brand-it dhe eksperiencës që dëshironi të krijoni."
+            >
+              Your website is designed around your brand and the experience you want to create.
+            </p>
+
+          </div>
+
+          <div class="process-arrow">↘</div>
+
+        </div>
+
+
+        <div class="process-item reveal">
+
+          <div class="process-number">03</div>
+
+          <div class="process-content">
+
+            <h3
+              data-en="Review"
+              data-al="Rishikim"
+            >
+              Review
+            </h3>
+
+            <p
+              data-en="You review the website and we refine the important details."
+              data-al="Ju rishikoni website-in dhe ne përmirësojmë detajet e rëndësishme."
+            >
+              You review the website and we refine the important details.
+            </p>
+
+          </div>
+
+          <div class="process-arrow">↘</div>
+
+        </div>
+
+
+        <div class="process-item reveal">
+
+          <div class="process-number">04</div>
+
+          <div class="process-content">
+
+            <h3
+              data-en="Launch"
+              data-al="Publikim"
+            >
+              Launch
+            </h3>
+
+            <p
+              data-en="Your website is prepared and launched for the world to see."
+              data-al="Website-i juaj përgatitet dhe publikohet për ta parë të gjithë."
+            >
+              Your website is prepared and launched for the world to see.
+            </p>
+
+          </div>
+
+          <div class="process-arrow">↗</div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- WHY US -->
+    <section class="section why-us">
+
+      <div class="why-container">
+
+        <div class="why-content reveal">
+
+          <div class="section-label">
+
+            <span></span>
+
+            <span
+              data-en="WHY ABEI SOLUTION"
+              data-al="PSE ABEI SOLUTION"
+            >
+              WHY ABEI SOLUTION
+            </span>
+
+          </div>
+
+
+          <h2
+            data-en="Your business deserves more than a basic website."
+            data-al="Biznesi juaj meriton më shumë se një website të zakonshme."
+          >
+            Your business deserves more than a basic website.
+          </h2>
+
+
+          <p
+            data-en="We focus on creating websites that feel modern, professional and memorable — designed to represent your business properly online."
+            data-al="Ne fokusohemi në krijimin e website-ve moderne, profesionale dhe të paharrueshme që përfaqësojnë biznesin tuaj siç duhet online."
+          >
+            We focus on creating websites that feel modern, professional and memorable — designed to represent your business properly online.
+          </p>
+
+
+          <a href="#contact" class="primary-button">
+
+            <span
+              data-en="Work With Us"
+              data-al="Puno Me Ne"
+            >
+              Work With Us
+            </span>
+
+            <span class="button-arrow">↗</span>
+
+          </a>
+
+        </div>
+
+
+        <div class="why-cards">
+
+          <div class="why-card reveal">
+
+            <span>✦</span>
+
+            <div>
+
+              <h3
+                data-en="Premium Feel"
+                data-al="Ndjesi Premium"
+              >
+                Premium Feel
+              </h3>
+
+              <p
+                data-en="Attention to visual details."
+                data-al="Vëmendje ndaj detajeve vizuale."
+              >
+                Attention to visual details.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="why-card reveal">
+
+            <span>◉</span>
+
+            <div>
+
+              <h3
+                data-en="Responsive"
+                data-al="Responsive"
+              >
+                Responsive
+              </h3>
+
+              <p
+                data-en="Designed for every screen."
+                data-al="Krijuar për çdo ekran."
+              >
+                Designed for every screen.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="why-card reveal">
+
+            <span>↗</span>
+
+            <div>
+
+              <h3
+                data-en="Built to Grow"
+                data-al="Krijuar për Rritje"
+              >
+                Built to Grow
+              </h3>
+
+              <p
+                data-en="Ready for your next step."
+                data-al="Gati për hapin tuaj të ardhshëm."
+              >
+                Ready for your next step.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+
+      <div class="contact-glow"></div>
+
+      <div class="contact-content reveal">
+
+        <div class="section-label contact-label">
+
+          <span></span>
+
+          <span
+            data-en="LET'S CREATE SOMETHING"
+            data-al="LE TË KRIJOJMË DIÇKA"
+          >
+            LET'S CREATE SOMETHING
+          </span>
+
+        </div>
+
+
+        <h2
+          data-en="Ready to upgrade your online presence?"
+          data-al="Gati të përmirësoni prezencën tuaj online?"
+        >
+          Ready to upgrade your online presence?
+        </h2>
+
+
+        <p
+          data-en="Tell us about your idea and let's discuss what we can build."
+          data-al="Na tregoni idenë tuaj dhe le të diskutojmë çfarë mund të krijojmë."
+        >
+          Tell us about your idea and let's discuss what we can build.
+        </p>
+
+
+        <div class="contact-buttons">
+
+          <a
+            href="mailto:info.abeisolution@gmail.com"
+            class="primary-button"
+          >
+
+            <span
+              data-en="Send an Email"
+              data-al="Dërgo Email"
+            >
+              Send an Email
+            </span>
+
+            <span class="button-arrow">↗</span>
+
+          </a>
+
+
+          <a
+            href="https://www.instagram.com/abeisolution/"
+            target="_blank"
+            class="instagram-button"
+          >
+
+            Instagram ↗
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-top">
+
+      <a href="#home" class="logo">
+
+        <div class="logo-mark">A</div>
+
+        <div class="logo-text">
+          <span>ABEI</span>
+          <small>SOLUTION</small>
+        </div>
+
+      </a>
+
+
+      <div class="footer-links">
+
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+
+      </div>
+
+
+      <a
+        href="mailto:info.abeisolution@gmail.com"
+        class="footer-email"
+      >
+        info.abeisolution@gmail.com
+      </a>
 
     </div>
 
 
     <div class="footer-bottom">
 
-        <span>© <span id="year"></span> Abei Solution</span>
+      <span>
+        © <span id="year"></span> Abei Solution
+      </span>
 
-        <span
-            data-en="Built for the digital future."
-            data-al="Krijuar për të ardhmen digjitale."
-        >
-            Built for the digital future.
-        </span>
+      <span
+        data-en="Designed for the digital future."
+        data-al="Krijuar për të ardhmen dixhitale."
+      >
+        Designed for the digital future.
+      </span>
 
     </div>
 
-</footer>
+  </footer>
 
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
