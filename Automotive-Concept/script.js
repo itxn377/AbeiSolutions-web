@@ -1,11 +1,12 @@
+javascript
 /* =========================================================
    AUTOMOTIVE CONCEPT
-   MAIN JAVASCRIPT
+   INTERACTION ENGINE
 ========================================================= */
 
 
 /* =========================================================
-   PAGE LOADER
+   LOADER
 ========================================================= */
 
 window.addEventListener("load", () => {
@@ -13,113 +14,63 @@ window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
 
     setTimeout(() => {
-        loader.classList.add("hidden");
+        loader.classList.add("loaded");
     }, 1900);
 
 });
 
 
 /* =========================================================
-   CUSTOM CURSOR
+   NAVIGATION
 ========================================================= */
 
-const cursor = document.querySelector(".cursor");
-const cursorBlur = document.querySelector(".cursor-blur");
+const nav = document.getElementById("nav");
 
-let mouseX = 0;
-let mouseY = 0;
+window.addEventListener("scroll", () => {
 
-let blurX = 0;
-let blurY = 0;
+    if (window.scrollY > 50) {
 
+        nav.classList.add("scrolled");
 
-/* Only run custom cursor on devices with a mouse */
+    } else {
 
-if (window.matchMedia("(pointer: fine)").matches) {
-
-    document.addEventListener("mousemove", (event) => {
-
-        mouseX = event.clientX;
-        mouseY = event.clientY;
-
-        cursor.style.left = mouseX + "px";
-        cursor.style.top = mouseY + "px";
-
-    });
-
-
-    function animateCursor() {
-
-        blurX += (mouseX - blurX) * 0.15;
-        blurY += (mouseY - blurY) * 0.15;
-
-        cursorBlur.style.left = blurX + "px";
-        cursorBlur.style.top = blurY + "px";
-
-        requestAnimationFrame(animateCursor);
+        nav.classList.remove("scrolled");
 
     }
 
-    animateCursor();
-
-
-    /* Cursor interaction */
-
-    const interactiveElements = document.querySelectorAll(
-        "a, button, input"
-    );
-
-
-    interactiveElements.forEach((element) => {
-
-        element.addEventListener("mouseenter", () => {
-
-            cursorBlur.style.width = "65px";
-            cursorBlur.style.height = "65px";
-
-        });
-
-
-        element.addEventListener("mouseleave", () => {
-
-            cursorBlur.style.width = "40px";
-            cursorBlur.style.height = "40px";
-
-        });
-
-    });
-
-}
+});
 
 
 /* =========================================================
    MOBILE MENU
 ========================================================= */
 
-const menuButton = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
+const menuToggle =
+    document.getElementById("menuToggle");
 
-const mobileLinks = mobileMenu.querySelectorAll("a");
+const mobileNav =
+    document.getElementById("mobileNav");
+
+const mobileLinks =
+    document.querySelectorAll(".mobile-nav-links a");
 
 
-menuButton.addEventListener("click", () => {
+menuToggle.addEventListener("click", () => {
 
-    mobileMenu.classList.toggle("active");
+    mobileNav.classList.toggle("open");
 
-    document.body.classList.toggle("menu-open");
+    document.body.classList.toggle("locked");
 
 });
 
 
-/* Close menu when clicking navigation links */
-
-mobileLinks.forEach((link) => {
+mobileLinks.forEach(link => {
 
     link.addEventListener("click", () => {
 
-        mobileMenu.classList.remove("active");
+        mobileNav.classList.remove("open");
 
-        document.body.classList.remove("menu-open");
+        document.body.classList.remove("locked");
 
     });
 
@@ -127,57 +78,68 @@ mobileLinks.forEach((link) => {
 
 
 /* =========================================================
-   NAVBAR SCROLL EFFECT
+   LANGUAGE SWITCH
 ========================================================= */
 
-const navbar = document.querySelector(".navbar");
+const languageButton =
+    document.getElementById("language");
+
+let currentLanguage = "EN";
 
 
-window.addEventListener("scroll", () => {
+languageButton.addEventListener("click", () => {
 
-    if (window.scrollY > 50) {
+    currentLanguage =
+        currentLanguage === "EN"
+            ? "AL"
+            : "EN";
 
-        navbar.style.position = "fixed";
 
-        navbar.style.background =
-            "rgba(8, 8, 8, 0.92)";
+    const spans =
+        languageButton.querySelectorAll("span");
 
-        navbar.style.backdropFilter =
-            "blur(15px)";
 
-    } else {
+    spans.forEach(span => {
 
-        navbar.style.position = "absolute";
+        span.classList.remove("active");
 
-        navbar.style.background =
-            "transparent";
+    });
 
-        navbar.style.backdropFilter =
-            "none";
 
-    }
+    spans[currentLanguage === "EN" ? 0 : 1]
+        .classList.add("active");
+
+
+    /*
+        Prototype behavior only.
+
+        When real client information is added,
+        this can be connected to a complete
+        translation dictionary.
+    */
 
 });
 
 
 /* =========================================================
-   SMOOTH SCROLL FOR INTERNAL LINKS
+   SMOOTH ANCHOR NAVIGATION
 ========================================================= */
 
-const links = document.querySelectorAll('a[href^="#"]');
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(link => {
 
+        link.addEventListener("click", event => {
 
-links.forEach((link) => {
+            const id =
+                link.getAttribute("href");
 
-    link.addEventListener("click", (event) => {
+            if (id === "#") return;
 
-        const targetId = link.getAttribute("href");
+            const target =
+                document.querySelector(id);
 
-        if (targetId === "#") return;
-
-        const target = document.querySelector(targetId);
-
-        if (target) {
+            if (!target) return;
 
             event.preventDefault();
 
@@ -186,142 +148,69 @@ links.forEach((link) => {
                 block: "start"
             });
 
-        }
+        });
 
     });
 
-});
-
 
 /* =========================================================
-   ANIMATED STATISTICS
-========================================================= */
-
-const statNumbers =
-    document.querySelectorAll(".stat-number[data-target]");
-
-
-let statsAnimated = false;
-
-
-function animateStats() {
-
-    if (statsAnimated) return;
-
-
-    const statsSection =
-        document.querySelector(".stats");
-
-
-    const sectionPosition =
-        statsSection.getBoundingClientRect();
-
-
-    if (
-        sectionPosition.top <
-        window.innerHeight * 0.8
-    ) {
-
-        statsAnimated = true;
-
-
-        statNumbers.forEach((stat) => {
-
-            const target =
-                parseInt(stat.dataset.target);
-
-            let current = 0;
-
-
-            const increment =
-                Math.max(
-                    1,
-                    Math.ceil(target / 80)
-                );
-
-
-            const timer = setInterval(() => {
-
-                current += increment;
-
-
-                if (current >= target) {
-
-                    current = target;
-
-                    clearInterval(timer);
-
-                }
-
-
-                stat.textContent = current;
-
-            }, 20);
-
-        });
-
-    }
-
-}
-
-
-window.addEventListener("scroll", animateStats);
-
-animateStats();
-
-
-/* =========================================================
-   REVEAL ANIMATIONS
+   SCROLL REVEAL
 ========================================================= */
 
 const revealElements = document.querySelectorAll(
-    ".intro, .vehicle-card, .about-content, .about-visual, .stat"
+    ".intro-main, .section-heading, .vehicle-card, " +
+    ".experience-heading, .experience-items, " +
+    ".number-item, .about-image, .about-content, " +
+    ".contact-content"
 );
 
 
-/* Initial state */
-
-revealElements.forEach((element) => {
+revealElements.forEach(element => {
 
     element.style.opacity = "0";
+
     element.style.transform =
         "translateY(35px)";
 
     element.style.transition =
-        "opacity 0.8s ease, transform 0.8s ease";
+        "opacity .9s ease, transform .9s cubic-bezier(.77,0,.18,1)";
 
 });
 
 
-const revealObserver = new IntersectionObserver(
+const revealObserver =
+    new IntersectionObserver(
 
-    (entries) => {
+        entries => {
 
-        entries.forEach((entry) => {
+            entries.forEach(entry => {
 
-            if (entry.isIntersecting) {
+                if (!entry.isIntersecting)
+                    return;
+
 
                 entry.target.style.opacity = "1";
 
                 entry.target.style.transform =
                     "translateY(0)";
 
-                revealObserver.unobserve(entry.target);
 
-            }
+                revealObserver.unobserve(
+                    entry.target
+                );
 
-        });
+            });
 
-    },
+        },
 
-    {
-        threshold: 0.15
-    }
+        {
+            threshold: .12
+        }
 
-);
+    );
 
 
-revealElements.forEach((element) => {
+revealElements.forEach(element => {
 
     revealObserver.observe(element);
 
@@ -329,24 +218,123 @@ revealElements.forEach((element) => {
 
 
 /* =========================================================
-   VEHICLE CARD PARALLAX EFFECT
+   COUNTER ANIMATION
 ========================================================= */
 
-const vehicleImages =
-    document.querySelectorAll(".vehicle-image");
+const counters =
+    document.querySelectorAll("[data-number]");
+
+let countersStarted = false;
 
 
-vehicleImages.forEach((image) => {
+function startCounters() {
 
-    image.addEventListener("mousemove", (event) => {
+    if (countersStarted) return;
 
-        if (!window.matchMedia("(pointer: fine)").matches) {
-            return;
+
+    const numbersSection =
+        document.querySelector(".numbers");
+
+
+    const rect =
+        numbersSection.getBoundingClientRect();
+
+
+    if (rect.top > window.innerHeight * .8)
+        return;
+
+
+    countersStarted = true;
+
+
+    counters.forEach(counter => {
+
+        const target =
+            Number(counter.dataset.number);
+
+        let current = 0;
+
+
+        const duration = 1300;
+
+        const start =
+            performance.now();
+
+
+        function update(time) {
+
+            const progress =
+                Math.min(
+                    (time - start) / duration,
+                    1
+                );
+
+
+            const eased =
+                1 - Math.pow(1 - progress, 3);
+
+
+            current =
+                Math.floor(target * eased);
+
+
+            counter.textContent =
+                current;
+
+
+            if (progress < 1) {
+
+                requestAnimationFrame(update);
+
+            } else {
+
+                counter.textContent = target;
+
+            }
+
         }
 
 
+        requestAnimationFrame(update);
+
+    });
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    startCounters
+);
+
+startCounters();
+
+
+/* =========================================================
+   VEHICLE HOVER EFFECT
+========================================================= */
+
+const vehicleCards =
+    document.querySelectorAll(".vehicle-card");
+
+
+vehicleCards.forEach(card => {
+
+    const image =
+        card.querySelector(".vehicle-image");
+
+
+    card.addEventListener("mousemove", event => {
+
+        if (
+            !window.matchMedia(
+                "(pointer:fine)"
+            ).matches
+        ) return;
+
+
         const rect =
-            image.getBoundingClientRect();
+            card.getBoundingClientRect();
 
 
         const x =
@@ -365,24 +353,26 @@ vehicleImages.forEach((image) => {
             rect.height / 2;
 
 
-        const rotateX =
-            ((y - centerY) / centerY) * -3;
-
-
         const rotateY =
-            ((x - centerX) / centerX) * 3;
+            ((x - centerX) / centerX) * 1.5;
+
+
+        const rotateX =
+            ((y - centerY) / centerY) * -1.5;
 
 
         image.style.transform =
-            `perspective(800px)
-             rotateX(${rotateX}deg)
-             rotateY(${rotateY}deg)
-             scale(1.02)`;
+            `
+            scale(.99)
+            perspective(900px)
+            rotateX(${rotateX}deg)
+            rotateY(${rotateY}deg)
+            `;
 
     });
 
 
-    image.addEventListener("mouseleave", () => {
+    card.addEventListener("mouseleave", () => {
 
         image.style.transform = "";
 
@@ -392,79 +382,26 @@ vehicleImages.forEach((image) => {
 
 
 /* =========================================================
-   NEWSLETTER FORM
+   HERO PARALLAX
 ========================================================= */
 
-const newsletterInput =
-    document.querySelector(".newsletter-form input");
-
-const newsletterButton =
-    document.querySelector(".newsletter-form button");
-
-
-newsletterButton.addEventListener("click", () => {
-
-    const email =
-        newsletterInput.value.trim();
-
-
-    if (!email) {
-
-        newsletterInput.focus();
-
-        return;
-
-    }
-
-
-    const emailPattern =
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
-    if (!emailPattern.test(email)) {
-
-        alert(
-            "Please enter a valid email address."
-        );
-
-        return;
-
-    }
-
-
-    newsletterButton.textContent = "✓";
-
-    newsletterInput.value = "";
-
-
-    setTimeout(() => {
-
-        newsletterButton.textContent = "→";
-
-    }, 2500);
-
-});
-
-
-/* =========================================================
-   PARALLAX HERO EFFECT
-========================================================= */
-
-const heroBackground =
-    document.querySelector(".hero-bg");
+const heroImage =
+    document.querySelector(".hero-image");
 
 
 window.addEventListener("scroll", () => {
 
-    const scrollPosition =
+    if (!heroImage) return;
+
+
+    const scroll =
         window.scrollY;
 
 
-    if (scrollPosition < window.innerHeight) {
+    if (scroll < window.innerHeight) {
 
-        heroBackground.style.transform =
-            `scale(1.05)
-             translateY(${scrollPosition * 0.15}px)`;
+        heroImage.style.transform =
+            `scale(1.07) translateY(${scroll * .08}px)`;
 
     }
 
@@ -472,15 +409,132 @@ window.addEventListener("scroll", () => {
 
 
 /* =========================================================
-   CONSOLE BRAND MESSAGE
+   ACTIVE NAVIGATION
+========================================================= */
+
+const sections =
+    document.querySelectorAll(
+        "section[id]"
+    );
+
+const navLinks =
+    document.querySelectorAll(
+        "nav a"
+    );
+
+
+const sectionObserver =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (!entry.isIntersecting)
+                    return;
+
+
+                navLinks.forEach(link => {
+
+                    link.classList.remove(
+                        "active"
+                    );
+
+
+                    if (
+                        link.getAttribute("href") ===
+                        "#" + entry.target.id
+                    ) {
+
+                        link.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                });
+
+            });
+
+        },
+
+        {
+            rootMargin:
+                "-35% 0px -55% 0px"
+        }
+
+    );
+
+
+sections.forEach(section => {
+
+    sectionObserver.observe(section);
+
+});
+
+
+/* =========================================================
+   MAGNETIC BUTTONS
+========================================================= */
+
+const magneticButtons =
+    document.querySelectorAll(
+        ".contact-button, .button-primary, .text-button"
+    );
+
+
+magneticButtons.forEach(button => {
+
+    button.addEventListener("mousemove", event => {
+
+        if (
+            !window.matchMedia(
+                "(pointer:fine)"
+            ).matches
+        ) return;
+
+
+        const rect =
+            button.getBoundingClientRect();
+
+
+        const x =
+            event.clientX -
+            rect.left -
+            rect.width / 2;
+
+
+        const y =
+            event.clientY -
+            rect.top -
+            rect.height / 2;
+
+
+        button.style.transform =
+            `translate(${x * .08}px, ${y * .08}px)`;
+
+    });
+
+
+    button.addEventListener("mouseleave", () => {
+
+        button.style.transform = "";
+
+    });
+
+});
+
+
+/* =========================================================
+   CONSOLE
 ========================================================= */
 
 console.log(
-    "%cAUTOMOTIVE CONCEPT",
-    "color:#d6ff3f; font-size:24px; font-weight:bold;"
+    "%c AUTOMOTIVE CONCEPT ",
+    "background:#d7ff3f;color:#000;font-size:18px;font-weight:bold;padding:8px;"
 );
 
 console.log(
-    "%cPerformance. Precision. Passion.",
-    "color:#ffffff; font-size:12px;"
+    "%c Beyond driving.",
+    "color:#aaa;font-size:12px;"
 );
