@@ -1,4 +1,3 @@
-javascript
 /* =========================================================
    AUTOMOTIVE CONCEPT
    INTERACTION ENGINE
@@ -309,68 +308,36 @@ window.addEventListener(
 
 startCounters();
 
-
 /* =========================================================
    VEHICLE HOVER EFFECT
 ========================================================= */
 
-const vehicleCards =
-    document.querySelectorAll(".vehicle-card");
+const vehicleCards = document.querySelectorAll(".vehicle-card");
 
+vehicleCards.forEach((card) => {
 
-vehicleCards.forEach(card => {
+    const image = card.querySelector(".vehicle-image");
 
-    const image =
-        card.querySelector(".vehicle-image");
+    if (!image) return;
 
+    card.addEventListener("mousemove", (event) => {
 
-    card.addEventListener("mousemove", event => {
+        if (!window.matchMedia("(pointer:fine)").matches) return;
 
-        if (
-            !window.matchMedia(
-                "(pointer:fine)"
-            ).matches
-        ) return;
+        const rect = card.getBoundingClientRect();
 
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
 
-        const rect =
-            card.getBoundingClientRect();
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
 
-
-        const x =
-            event.clientX - rect.left;
-
-
-        const y =
-            event.clientY - rect.top;
-
-
-        const centerX =
-            rect.width / 2;
-
-
-        const centerY =
-            rect.height / 2;
-
-
-        const rotateY =
-            ((x - centerX) / centerX) * 1.5;
-
-
-        const rotateX =
-            ((y - centerY) / centerY) * -1.5;
-
+        const rotateY = ((x - centerX) / centerX) * 1.5;
+        const rotateX = ((y - centerY) / centerY) * -1.5;
 
         image.style.transform =
-            `
-            scale(.99)
-            perspective(900px)
-            rotateX(${rotateX}deg)
-            rotateY(${rotateY}deg)
-            `;
-
+            `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(0.99)`;
     });
-
 
     card.addEventListener("mouseleave", () => {
 
