@@ -1,66 +1,97 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Automotive Concept | Performance Redefined</title>
+    <title>Automotive Concept — Beyond Driving</title>
 
-    <link rel="stylesheet" href="style.css">
+    <meta
+        name="description"
+        content="Automotive Concept — exceptional vehicles for exceptional journeys."
+    >
 
-    <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- CUSTOM CURSOR -->
-    <div class="cursor"></div>
-    <div class="cursor-blur"></div>
+    <!-- =====================================================
+         LOADER
+    ====================================================== -->
 
+    <div class="loader" id="loader">
 
-    <!-- LOADER -->
-    <div id="loader">
-        <div class="loader-logo">
-            AUTOMOTIVE<span>.</span>
+        <div class="loader-brand">
+            <span>A</span>
+            AUTOMOTIVE
         </div>
 
-        <div class="loader-line">
-            <div class="loader-progress"></div>
+        <div class="loader-track">
+            <div class="loader-bar"></div>
         </div>
 
-        <p>ENGINEERING THE FUTURE</p>
+        <div class="loader-bottom">
+            <span>EST. 2026</span>
+            <span>PREPARING EXPERIENCE</span>
+        </div>
+
     </div>
 
 
-    <!-- NAVIGATION -->
-    <header class="navbar">
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
 
-        <a href="#" class="logo">
-            <span class="logo-icon">A</span>
-            AUTOMOTIVE
-            <small>CONCEPT</small>
+    <header class="nav" id="nav">
+
+        <a href="#home" class="brand">
+
+            <div class="brand-mark">
+                A
+            </div>
+
+            <div class="brand-name">
+                <strong>AUTOMOTIVE</strong>
+                <span>CONCEPT</span>
+            </div>
+
         </a>
 
-        <nav class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#vehicles">Vehicles</a>
+
+        <nav>
+
+            <a href="#home" class="active">Home</a>
+            <a href="#collection">Collection</a>
             <a href="#experience">Experience</a>
             <a href="#about">About</a>
+
         </nav>
 
-        <div class="nav-right">
 
-            <button class="language-btn">
-                EN
-                <span>/</span>
-                AL
+        <div class="nav-actions">
+
+            <button class="language" id="language">
+                <span class="active">EN</span>
+                <i>/</i>
+                <span>AL</span>
             </button>
 
-            <button class="menu-btn" id="menuBtn">
+            <a href="#contact" class="nav-contact">
+                Contact
+                <span>↗</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle">
                 <span></span>
                 <span></span>
             </button>
@@ -70,516 +101,631 @@
     </header>
 
 
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
+    <!-- =====================================================
+         MOBILE NAVIGATION
+    ====================================================== -->
 
-        <a href="#home">HOME</a>
-        <a href="#vehicles">VEHICLES</a>
-        <a href="#experience">EXPERIENCE</a>
-        <a href="#about">ABOUT</a>
+    <div class="mobile-nav" id="mobileNav">
 
-        <div class="mobile-contact">
-            <p>PREMIUM AUTOMOTIVE EXPERIENCE</p>
-            <button class="outline-btn">CONTACT US</button>
+        <div class="mobile-nav-links">
+
+            <a href="#home">01 <span>Home</span></a>
+            <a href="#collection">02 <span>Collection</span></a>
+            <a href="#experience">03 <span>Experience</span></a>
+            <a href="#about">04 <span>About</span></a>
+            <a href="#contact">05 <span>Contact</span></a>
+
+        </div>
+
+        <div class="mobile-footer">
+            Tirana · Albania
         </div>
 
     </div>
 
 
-    <!-- HERO -->
-    <main>
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
-        <section class="hero" id="home">
+    <section class="hero" id="home">
 
-            <div class="hero-bg"></div>
-            <div class="hero-overlay"></div>
+        <div class="hero-image"></div>
 
-            <!-- Animated light -->
-            <div class="hero-glow glow-one"></div>
-            <div class="hero-glow glow-two"></div>
+        <div class="hero-gradient"></div>
 
-            <div class="hero-content">
-
-                <div class="hero-top">
-
-                    <div class="eyebrow">
-                        <span></span>
-                        PREMIUM AUTOMOTIVE EXPERIENCE
-                    </div>
-
-                    <div class="hero-number">
-                        01 / 04
-                    </div>
-
-                </div>
+        <div class="hero-noise"></div>
 
 
-                <div class="hero-main">
+        <div class="hero-top">
 
-                    <h1>
-                        DRIVEN BY
-                        <span>PASSION.</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        Discover a new standard of automotive excellence.
-                        Exceptional vehicles, unforgettable experiences,
-                        and performance without compromise.
-                    </p>
-
-                </div>
-
-
-                <div class="hero-bottom">
-
-                    <a href="#vehicles" class="discover-btn">
-                        <span class="discover-circle">
-                            ↓
-                        </span>
-
-                        <div>
-                            <small>EXPLORE</small>
-                            <strong>OUR COLLECTION</strong>
-                        </div>
-                    </a>
-
-
-                    <div class="hero-specs">
-
-                        <div>
-                            <span>01</span>
-                            <p>EXCLUSIVE<br>VEHICLES</p>
-                        </div>
-
-                        <div>
-                            <span>02</span>
-                            <p>PREMIUM<br>SERVICE</p>
-                        </div>
-
-                        <div>
-                            <span>03</span>
-                            <p>UNLIMITED<br>PASSION</p>
-                        </div>
-
-                    </div>
-
-                </div>
-
+            <div class="location">
+                <span class="status-dot"></span>
+                TIRANA · ALBANIA
             </div>
 
-
-            <!-- Scroll indicator -->
-            <div class="scroll-indicator">
-
-                <div class="scroll-line"></div>
-
-                <span>SCROLL TO EXPLORE</span>
-
+            <div class="hero-index">
+                01 <span>/</span> 04
             </div>
-
-        </section>
-
-
-
-        <!-- MARQUEE -->
-        <section class="marquee-section">
-
-            <div class="marquee">
-
-                <div class="marquee-content">
-
-                    <span>PERFORMANCE</span>
-                    <i>✦</i>
-
-                    <span>PRECISION</span>
-                    <i>✦</i>
-
-                    <span>PASSION</span>
-                    <i>✦</i>
-
-                    <span>EXCELLENCE</span>
-                    <i>✦</i>
-
-                    <span>PERFORMANCE</span>
-                    <i>✦</i>
-
-                    <span>PRECISION</span>
-                    <i>✦</i>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- INTRO -->
-        <section class="intro">
-
-            <div class="section-label">
-                <span>01</span>
-                WHO WE ARE
-            </div>
-
-            <div class="intro-content">
-
-                <h2>
-                    MORE THAN<br>
-                    <em>A VEHICLE.</em>
-                </h2>
-
-                <div class="intro-text">
-
-                    <p>
-                        Automotive Concept brings together performance,
-                        design and passion to create an automotive
-                        experience unlike any other.
-                    </p>
-
-                    <a href="#about" class="text-link">
-                        DISCOVER OUR STORY
-                        <span>↗</span>
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- VEHICLES -->
-        <section class="vehicles" id="vehicles">
-
-            <div class="section-header">
-
-                <div>
-                    <div class="section-label">
-                        <span>02</span>
-                        THE COLLECTION
-                    </div>
-
-                    <h2>
-                        SELECTED FOR<br>
-                        <em>THE EXTRAORDINARY.</em>
-                    </h2>
-                </div>
-
-                <button class="view-all-btn">
-                    VIEW ALL VEHICLES
-                    <span>→</span>
-                </button>
-
-            </div>
-
-
-            <div class="vehicle-grid">
-
-
-                <!-- VEHICLE 1 -->
-                <article class="vehicle-card">
-
-                    <div class="vehicle-image image-one">
-
-                        <div class="vehicle-overlay"></div>
-
-                        <span class="vehicle-tag">
-                            FEATURED
-                        </span>
-
-                        <button class="vehicle-arrow">
-                            ↗
-                        </button>
-
-                    </div>
-
-                    <div class="vehicle-info">
-
-                        <div>
-                            <small>PERFORMANCE SERIES</small>
-                            <h3>THE BLACK EDITION</h3>
-                        </div>
-
-                        <span>01</span>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- VEHICLE 2 -->
-                <article class="vehicle-card featured-card">
-
-                    <div class="vehicle-image image-two">
-
-                        <div class="vehicle-overlay"></div>
-
-                        <span class="vehicle-tag">
-                            NEW ARRIVAL
-                        </span>
-
-                        <button class="vehicle-arrow">
-                            ↗
-                        </button>
-
-                    </div>
-
-                    <div class="vehicle-info">
-
-                        <div>
-                            <small>ULTIMATE PERFORMANCE</small>
-                            <h3>THE SIGNATURE</h3>
-                        </div>
-
-                        <span>02</span>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- VEHICLE 3 -->
-                <article class="vehicle-card">
-
-                    <div class="vehicle-image image-three">
-
-                        <div class="vehicle-overlay"></div>
-
-                        <span class="vehicle-tag">
-                            EXCLUSIVE
-                        </span>
-
-                        <button class="vehicle-arrow">
-                            ↗
-                        </button>
-
-                    </div>
-
-                    <div class="vehicle-info">
-
-                        <div>
-                            <small>GRAND TOURING</small>
-                            <h3>THE GRAND SPORT</h3>
-                        </div>
-
-                        <span>03</span>
-
-                    </div>
-
-                </article>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- EXPERIENCE -->
-        <section class="experience" id="experience">
-
-            <div class="experience-image"></div>
-
-            <div class="experience-overlay"></div>
-
-            <div class="experience-content">
-
-                <div class="section-label light-label">
-                    <span>03</span>
-                    THE EXPERIENCE
-                </div>
-
-                <div class="experience-main">
-
-                    <h2>
-                        BUILT FOR<br>
-                        THOSE WHO
-                        <em>EXPECT MORE.</em>
-                    </h2>
-
-                    <div class="experience-box">
-
-                        <p>
-                            From the moment you arrive,
-                            every detail is designed around
-                            one thing — you.
-                        </p>
-
-                        <button class="play-btn">
-                            <span>▶</span>
-                            WATCH FILM
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- STATS -->
-        <section class="stats">
-
-            <div class="stat">
-
-                <span class="stat-number" data-target="15">
-                    0
-                </span>
-
-                <small>YEARS OF<br>EXPERIENCE</small>
-
-            </div>
-
-
-            <div class="stat">
-
-                <span class="stat-number" data-target="500">
-                    0
-                </span>
-
-                <small>PREMIUM<br>VEHICLES</small>
-
-            </div>
-
-
-            <div class="stat">
-
-                <span class="stat-number" data-target="100">
-                    0
-                </span>
-
-                <small>CLIENT<br>SATISFACTION</small>
-
-            </div>
-
-
-            <div class="stat">
-
-                <span class="stat-number">
-                    24
-                </span>
-
-                <small>HOUR<br>SUPPORT</small>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ABOUT -->
-        <section class="about" id="about">
-
-            <div class="about-visual">
-
-                <div class="about-image"></div>
-
-                <div class="about-badge">
-
-                    <span>AC</span>
-
-                    <p>
-                        AUTOMOTIVE<br>
-                        CONCEPT
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="about-content">
-
-                <div class="section-label">
-                    <span>04</span>
-                    OUR PHILOSOPHY
-                </div>
-
-                <h2>
-                    OBSESSED WITH
-                    <em>EXCELLENCE.</em>
-                </h2>
-
-                <p>
-                    We believe that a great vehicle is more than
-                    transportation. It represents ambition, engineering,
-                    personality and the pursuit of something extraordinary.
-                </p>
-
-                <p>
-                    Automotive Concept exists for people who expect
-                    more from every journey.
-                </p>
-
-                <a href="#" class="primary-btn">
-                    GET IN TOUCH
-                    <span>↗</span>
-                </a>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- CTA -->
-        <section class="cta">
-
-            <div class="cta-glow"></div>
-
-            <div class="cta-content">
-
-                <p>YOUR NEXT JOURNEY STARTS HERE</p>
-
-                <h2>
-                    READY TO FIND
-                    <em>YOUR PERFECT DRIVE?</em>
-                </h2>
-
-                <a href="#" class="cta-button">
-                    START YOUR EXPERIENCE
-                    <span>→</span>
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- FOOTER -->
-    <footer class="footer">
-
-        <div class="footer-top">
-
-            <a href="#" class="footer-logo">
-                AUTOMOTIVE<span>.</span>
-            </a>
-
-            <p>
-                PERFORMANCE WITHOUT COMPROMISE.
-            </p>
 
         </div>
 
 
-        <div class="footer-middle">
+        <div class="hero-content">
+
+            <div class="hero-label">
+                <span></span>
+                AUTOMOTIVE EXCELLENCE
+            </div>
+
+            <h1>
+                BEYOND<br>
+                <span>DRIVING.</span>
+            </h1>
+
+            <p>
+                A carefully selected collection of exceptional
+                automobiles, built around the way you want to drive.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#collection" class="button button-primary">
+                    Explore collection
+                    <span>↗</span>
+                </a>
+
+                <a href="#experience" class="button button-ghost">
+                    Discover us
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- FLOATING SPEC -->
+
+        <div class="hero-spec">
+
+            <div class="spec-top">
+                <span>FEATURED</span>
+                <span>01 / 04</span>
+            </div>
+
+            <div class="spec-title">
+                NIGHT<br>
+                <strong>PERFORMANCE</strong>
+            </div>
+
+            <div class="spec-line"></div>
+
+            <div class="spec-data">
+
+                <div>
+                    <span>POWER</span>
+                    <strong>612 HP</strong>
+                </div>
+
+                <div>
+                    <span>0 — 100</span>
+                    <strong>3.1 SEC</strong>
+                </div>
+
+                <div>
+                    <span>DRIVE</span>
+                    <strong>AWD</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="scroll">
+
+            <span>SCROLL</span>
+
+            <div class="scroll-line">
+                <i></i>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
+    <section class="intro">
+
+        <div class="intro-number">
+            01
+        </div>
+
+        <div class="intro-main">
+
+            <div class="small-label">
+                THE AUTOMOTIVE CONCEPT
+            </div>
+
+            <h2>
+                Cars should not simply
+                <span>take you somewhere.</span>
+                They should make you
+                want to go.
+            </h2>
+
+            <div class="intro-bottom">
+
+                <p>
+                    We curate remarkable vehicles for people who
+                    appreciate design, engineering and the feeling
+                    behind the wheel.
+                </p>
+
+                <a href="#about" class="circle-link">
+                    <span>Our story</span>
+                    <b>↗</b>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         COLLECTION
+    ====================================================== -->
+
+    <section class="collection" id="collection">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="small-label">
+                    02 · OUR COLLECTION
+                </div>
+
+                <h2>
+                    SELECTED.
+                    <span>NOT ORDINARY.</span>
+                </h2>
+
+            </div>
+
+            <div class="collection-counter">
+                <strong>04</strong>
+                <span>VEHICLES</span>
+            </div>
+
+        </div>
+
+
+        <div class="vehicles">
+
+            <!-- VEHICLE -->
+
+            <article class="vehicle-card">
+
+                <div class="vehicle-image car-one">
+
+                    <div class="vehicle-shade"></div>
+
+                    <div class="vehicle-number">
+                        01
+                    </div>
+
+                    <button class="vehicle-open">
+                        ↗
+                    </button>
+
+                </div>
+
+                <div class="vehicle-info">
+
+                    <div>
+
+                        <span>SPORT · 2026</span>
+
+                        <h3>
+                            Blackline GT
+                        </h3>
+
+                    </div>
+
+                    <div class="vehicle-price">
+                        FROM €89,900
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- VEHICLE -->
+
+            <article class="vehicle-card">
+
+                <div class="vehicle-image car-two">
+
+                    <div class="vehicle-shade"></div>
+
+                    <div class="vehicle-number">
+                        02
+                    </div>
+
+                    <button class="vehicle-open">
+                        ↗
+                    </button>
+
+                </div>
+
+                <div class="vehicle-info">
+
+                    <div>
+
+                        <span>GRAND TOURER · 2026</span>
+
+                        <h3>
+                            Silverline S
+                        </h3>
+
+                    </div>
+
+                    <div class="vehicle-price">
+                        FROM €114,500
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- VEHICLE -->
+
+            <article class="vehicle-card">
+
+                <div class="vehicle-image car-three">
+
+                    <div class="vehicle-shade"></div>
+
+                    <div class="vehicle-number">
+                        03
+                    </div>
+
+                    <button class="vehicle-open">
+                        ↗
+                    </button>
+
+                </div>
+
+                <div class="vehicle-info">
+
+                    <div>
+
+                        <span>PERFORMANCE · 2026</span>
+
+                        <h3>
+                            Apex R
+                        </h3>
+
+                    </div>
+
+                    <div class="vehicle-price">
+                        FROM €139,900
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- VEHICLE -->
+
+            <article class="vehicle-card">
+
+                <div class="vehicle-image car-four">
+
+                    <div class="vehicle-shade"></div>
+
+                    <div class="vehicle-number">
+                        04
+                    </div>
+
+                    <button class="vehicle-open">
+                        ↗
+                    </button>
+
+                </div>
+
+                <div class="vehicle-info">
+
+                    <div>
+
+                        <span>LUXURY SUV · 2026</span>
+
+                        <h3>
+                            Urban X
+                        </h3>
+
+                    </div>
+
+                    <div class="vehicle-price">
+                        FROM €104,900
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <div class="collection-bottom">
+
+            <p>
+                Every vehicle is inspected, selected and prepared
+                to meet our standards.
+            </p>
+
+            <a href="#">
+                View complete collection
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EXPERIENCE
+    ====================================================== -->
+
+    <section class="experience" id="experience">
+
+        <div class="experience-bg"></div>
+
+        <div class="experience-overlay"></div>
+
+
+        <div class="experience-content">
+
+            <div class="small-label light">
+                03 · THE EXPERIENCE
+            </div>
+
+            <div class="experience-heading">
+
+                <h2>
+                    IT'S NOT ABOUT
+                    <span>THE CAR.</span>
+                </h2>
+
+                <p>
+                    It's about the moment the engine starts,
+                    the road opens and everything else disappears.
+                </p>
+
+            </div>
+
+
+            <div class="experience-items">
+
+                <div>
+                    <span>01</span>
+                    <strong>PERSONAL SELECTION</strong>
+                    <p>
+                        Vehicles selected around your preferences,
+                        lifestyle and ambitions.
+                    </p>
+                </div>
+
+                <div>
+                    <span>02</span>
+                    <strong>TRANSPARENT SERVICE</strong>
+                    <p>
+                        A straightforward experience from first
+                        conversation to final delivery.
+                    </p>
+                </div>
+
+                <div>
+                    <span>03</span>
+                    <strong>AFTERCARE</strong>
+                    <p>
+                        Our relationship continues long after
+                        you leave the showroom.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NUMBERS
+    ====================================================== -->
+
+    <section class="numbers">
+
+        <div class="number-item">
+
+            <strong data-number="15">0</strong>
+
+            <span>
+                YEARS
+                <br>
+                EXPERIENCE
+            </span>
+
+        </div>
+
+        <div class="number-item">
+
+            <strong data-number="240">0</strong>
+
+            <span>
+                VEHICLES
+                <br>
+                DELIVERED
+            </span>
+
+        </div>
+
+        <div class="number-item">
+
+            <strong data-number="98">0</strong>
+
+            <span>
+                CLIENT
+                <br>
+                SATISFACTION
+            </span>
+
+        </div>
+
+        <div class="number-item">
+
+            <strong>24/7</strong>
+
+            <span>
+                CLIENT
+                <br>
+                SUPPORT
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section class="about" id="about">
+
+        <div class="about-image">
+
+            <div class="about-frame"></div>
+
+            <div class="about-caption">
+                <span>AC / 2026</span>
+                <span>ESTABLISHED FOR DRIVERS</span>
+            </div>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <div class="small-label">
+                04 · WHO WE ARE
+            </div>
+
+            <h2>
+                BUILT AROUND
+                <span>THE DRIVER.</span>
+            </h2>
+
+            <p>
+                Automotive Concept was created with a simple idea:
+                buying a remarkable car should feel as remarkable
+                as driving one.
+            </p>
+
+            <p>
+                No unnecessary complexity. No pressure.
+                Just exceptional automobiles and an experience
+                worthy of them.
+            </p>
+
+            <a href="#contact" class="text-button">
+                Meet Automotive Concept
+                <span>↗</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT CTA
+    ====================================================== -->
+
+    <section class="contact" id="contact">
+
+        <div class="contact-glow"></div>
+
+        <div class="contact-content">
+
+            <div class="small-label">
+                START A CONVERSATION
+            </div>
+
+            <h2>
+                YOUR NEXT CAR
+                <span>IS WAITING.</span>
+            </h2>
+
+            <p>
+                Tell us what you're looking for.
+                We'll take it from there.
+            </p>
+
+            <a href="mailto:info@automotiveconcept.com" class="contact-button">
+                Get in touch
+                <span>↗</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <div class="brand-mark">
+                    A
+                </div>
+
+                <strong>
+                    AUTOMOTIVE
+                    <span>CONCEPT</span>
+                </strong>
+
+                <p>
+                    Beyond driving.
+                </p>
+
+            </div>
+
 
             <div class="footer-column">
 
-                <span>NAVIGATION</span>
+                <span>NAVIGATE</span>
 
                 <a href="#home">Home</a>
-                <a href="#vehicles">Vehicles</a>
+                <a href="#collection">Collection</a>
                 <a href="#experience">Experience</a>
                 <a href="#about">About</a>
 
@@ -590,31 +736,28 @@
 
                 <span>CONTACT</span>
 
-                <p>+355 XX XXX XXXX</p>
-                <p>info@automotiveconcept.com</p>
-                <p>Tirana, Albania</p>
+                <a href="mailto:info@automotiveconcept.com">
+                    info@automotiveconcept.com
+                </a>
+
+                <a href="tel:+355000000000">
+                    +355 XX XXX XXXX
+                </a>
+
+                <p>
+                    Tirana, Albania
+                </p>
 
             </div>
 
 
-            <div class="footer-column newsletter">
+            <div class="footer-column">
 
-                <span>STAY UPDATED</span>
+                <span>SOCIAL</span>
 
-                <p>
-                    Receive exclusive updates and automotive news.
-                </p>
-
-                <div class="newsletter-form">
-
-                    <input
-                        type="email"
-                        placeholder="YOUR EMAIL ADDRESS"
-                    >
-
-                    <button>→</button>
-
-                </div>
+                <a href="#">Instagram ↗</a>
+                <a href="#">Facebook ↗</a>
+                <a href="#">TikTok ↗</a>
 
             </div>
 
@@ -623,20 +766,17 @@
 
         <div class="footer-bottom">
 
-            <p>
-                © 2026 AUTOMOTIVE CONCEPT
-            </p>
+            <span>
+                © 2026 Automotive Concept
+            </span>
 
-            <div>
+            <span>
+                Privacy · Terms
+            </span>
 
-                <a href="#">INSTAGRAM</a>
-                <a href="#">FACEBOOK</a>
-
-            </div>
-
-            <p>
-                DESIGNED FOR THE FUTURE
-            </p>
+            <span>
+                Designed with intent.
+            </span>
 
         </div>
 
@@ -647,3 +787,4 @@
 
 </body>
 </html>
+```
