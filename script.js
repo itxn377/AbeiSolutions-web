@@ -1,150 +1,245 @@
+/* ==========================================================================
+   ABEI Solutions — script.js
+   Vanilla JS, no dependencies. Each function is self-contained and guarded
+   so a missing element never throws — sections can be edited independently.
+   ========================================================================== */
+
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Current Year for Footer
-    document.getElementById('year').textContent = new Date().getFullYear();
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-    // 2. Mobile Menu Toggle
-    const mobileToggle = document.getElementById('mobile-toggle');
-    const navLinks = document.getElementById('nav-links');
-    
-    mobileToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        // Simple animation for hamburger lines
-        const lines = mobileToggle.querySelectorAll('.line');
-        if (navLinks.classList.contains('active')) {
-            lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-            lines[1].style.transform = 'rotate(-45deg) translate(4px, -4px)';
-        } else {
-            lines[0].style.transform = 'none';
-            lines[1].style.transform = 'none';
-        }
-    });
+  initHeaderScroll();
+  initMobileMenu();
+  initHeroInteraction();
+  initServiceAccordion();
+  initProcessProgress();
+  initContactForm();
+  initPlaceholderLinks();
+  initAnchorFocus();
+  initFooterYear();
 
-    // Close mobile menu on link click
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            const lines = mobileToggle.querySelectorAll('.line');
-            lines[0].style.transform = 'none';
-            lines[1].style.transform = 'none';
-        });
-    });
-
-    // 3. Sticky Header Background on Scroll
-    const header = document.getElementById('header');
+  /* Sticky header gains a border/shadow once the page has scrolled. */
+  function initHeaderScroll() {
+    const header = document.getElementById('siteHeader');
+    if (!header) return;
+    let ticking = false;
+    const update = () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 12);
+      ticking = false;
+    };
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+    update();
+  }
+
+  /* Full-screen mobile nav: opens/closes, locks scroll, closes on link click or Escape. */
+  function initMobileMenu() {
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('mobileMenu');
+    const closeBtn = document.getElementById('mobileMenuClose');
+    if (!toggle || !menu) return;
+
+    const openMenu = () => {
+      menu.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Close menu');
+      document.documentElement.classList.add('no-scroll');
+      if (closeBtn) closeBtn.focus({ preventScroll: true });
+    };
+    const closeMenu = () => {
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+      document.documentElement.classList.remove('no-scroll');
+      toggle.focus({ preventScroll: true });
+    };
+
+    toggle.addEventListener('click', () => {
+      menu.classList.contains('is-open') ? closeMenu() : openMenu();
+    });
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menu.classList.contains('is-open')) closeMenu();
+    });
+  }
+
+  /* The one signature interactive moment: a soft glow and gentle parallax
+     on the hero's browser mockups, following the cursor. Skipped entirely
+     on touch devices and when the visitor prefers reduced motion. */
+  function initHeroInteraction() {
+    const hero = document.querySelector('.hero');
+    if (!hero || !canHover || prefersReducedMotion) return;
+
+    const layers = hero.querySelectorAll('[data-depth]');
+    let frame = null;
+
+    hero.addEventListener('mousemove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      const xPct = ((e.clientX - rect.left) / rect.width) * 100;
+      const yPct = ((e.clientY - rect.top) / rect.height) * 100;
+      hero.style.setProperty('--mx', xPct + '%');
+      hero.style.setProperty('--my', yPct + '%');
+
+      const relX = (e.clientX - rect.left - rect.width / 2) / rect.width;
+      const relY = (e.clientY - rect.top - rect.height / 2) / rect.height;
+
+      if (frame) cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        layers.forEach((layer) => {
+          const depth = parseFloat(layer.dataset.depth) || 0;
+          layer.style.setProperty('--parallax-x', relX * depth * 50 + 'px');
+          layer.style.setProperty('--parallax-y', relY * depth * 50 + 'px');
+        });
+      });
+    });
+  }
+
+  /* Services list: click-to-expand, one panel independent of the others. */
+  function initServiceAccordion() {
+    document.querySelectorAll('.service-header').forEach((header) => {
+      header.addEventListener('click', () => {
+        const row = header.closest('.service-row');
+        if (!row) return;
+        const expanded = header.getAttribute('aria-expanded') === 'true';
+        header.setAttribute('aria-expanded', String(!expanded));
+        row.classList.toggle('is-open', !expanded);
+      });
+    });
+  }
+
+  /* Process section: as each step scrolls into view, mark it active and
+     grow the connecting line to match — a progress indicator for a
+     genuinely sequential set of steps, not a decorative reveal. */
+  function initProcessProgress() {
+    const steps = document.querySelectorAll('.process-step');
+    const fill = document.getElementById('processFill');
+    if (!steps.length) return;
+
+    if (prefersReducedMotion) {
+      steps.forEach((s) => s.classList.add('is-active'));
+      if (fill) fill.style.setProperty('--fill-pct', '100%');
+      return;
+    }
+
+    const total = steps.length;
+    let maxReached = 0;
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-active');
+        const index = Array.from(steps).indexOf(entry.target);
+        maxReached = Math.max(maxReached, index + 1);
+        if (fill) fill.style.setProperty('--fill-pct', (maxReached / total) * 100 + '%');
+        io.unobserve(entry.target);
+      });
+    }, { threshold: 0.5 });
+
+    steps.forEach((step) => io.observe(step));
+  }
+
+  /* Contact form: front-end-only validation with inline errors, a brief
+     simulated send, and a polished success state. Nothing is transmitted. */
+  function initContactForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+    const successPanel = document.getElementById('formSuccess');
+    const statusEl = document.getElementById('formStatus');
+    const submitBtn = form.querySelector('.form-submit');
+    const resetBtn = document.getElementById('formReset');
+
+    const fields = [
+      { input: form.elements.name, message: 'Please enter your name.', validate: (v) => v.trim().length > 1 },
+      { input: form.elements.email, message: 'Please enter a valid email address.', validate: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
+      { input: form.elements.businessType, message: 'Please select a business type.', validate: (v) => v !== '' },
+      { input: form.elements.details, message: 'Tell us a little more about your project.', validate: (v) => v.trim().length > 9 },
+    ];
+
+    const showError = (field, show) => {
+      const wrapper = field.input.closest('.field');
+      if (!wrapper) return;
+      const errorEl = wrapper.querySelector('.field-error');
+      wrapper.classList.toggle('field--invalid', show);
+      field.input.setAttribute('aria-invalid', String(show));
+      if (errorEl) errorEl.textContent = show ? field.message : '';
+    };
+
+    fields.forEach((field) => {
+      const evt = field.input.tagName === 'SELECT' ? 'change' : 'input';
+      field.input.addEventListener(evt, () => {
+        if (field.validate(field.input.value)) showError(field, false);
+      });
     });
 
-    // 4. Scroll Reveal Animation using Intersection Observer
-    const revealElements = document.querySelectorAll('.reveal');
-    
-    // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let firstInvalid = null;
 
-    if (!prefersReducedMotion) {
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Run once
-                }
-            });
-        }, {
-            root: null,
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        });
+      fields.forEach((field) => {
+        const valid = field.validate(field.input.value);
+        showError(field, !valid);
+        if (!valid && !firstInvalid) firstInvalid = field.input;
+      });
 
-        revealElements.forEach(el => revealObserver.observe(el));
-    }
+      if (firstInvalid) {
+        firstInvalid.focus();
+        if (statusEl) statusEl.textContent = 'Please fix the highlighted fields.';
+        return;
+      }
 
-    // 5. Custom Cursor Logic
-    if (window.matchMedia("(pointer: fine)").matches && !prefersReducedMotion) {
-        const cursorDot = document.querySelector('.cursor-dot');
-        const cursorOutline = document.querySelector('.cursor-outline');
-        
-        let mouseX = 0, mouseY = 0;
-        let outlineX = 0, outlineY = 0;
-        
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            // Dot follows exactly
-            cursorDot.style.left = `${mouseX}px`;
-            cursorDot.style.top = `${mouseY}px`;
-        });
+      submitBtn.disabled = true;
+      const originalLabel = submitBtn.textContent;
+      submitBtn.textContent = 'Sending…';
+      if (statusEl) statusEl.textContent = 'Sending your message…';
 
-        // Smooth trailing effect for the outline using requestAnimationFrame
-        const animateCursor = () => {
-            let distX = mouseX - outlineX;
-            let distY = mouseY - outlineY;
-            
-            outlineX = outlineX + (distX * 0.15); // Adjust ease amount here
-            outlineY = outlineY + (distY * 0.15);
-            
-            cursorOutline.style.left = `${outlineX}px`;
-            cursorOutline.style.top = `${outlineY}px`;
-            
-            requestAnimationFrame(animateCursor);
-        };
-        animateCursor();
-    }
-
-    // 6. Magnetic Buttons (Subtle pull effect on hover)
-    const magneticElements = document.querySelectorAll('[data-magnetic]');
-    
-    if (!prefersReducedMotion) {
-        magneticElements.forEach(el => {
-            el.addEventListener('mousemove', (e) => {
-                const rect = el.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                
-                // Keep movement subtle (max 15px)
-                el.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
-            });
-
-            el.addEventListener('mouseleave', () => {
-                el.style.transform = 'translate(0px, 0px)';
-                // Smooth return transition is handled by CSS var(--transition)
-            });
-        });
-    }
-
-    // 7. Mock Form Submission
-    const contactForm = document.getElementById('contactForm');
-    const successMsg = document.getElementById('form-success');
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Visual loading state
-        submitBtn.textContent = 'Sending...';
-        submitBtn.style.opacity = '0.7';
-        
-        // Mock API call delay
-        setTimeout(() => {
-            contactForm.reset();
-            submitBtn.textContent = 'Submit Inquiry';
-            submitBtn.style.opacity = '1';
-            submitBtn.classList.add('hidden'); // hide button
-            
-            // Show success message
-            successMsg.classList.remove('hidden');
-            
-            // Hide message and show button again after 5 seconds
-            setTimeout(() => {
-                successMsg.classList.add('hidden');
-                submitBtn.classList.remove('hidden');
-            }, 5000);
-            
-        }, 1500);
+      window.setTimeout(() => {
+        form.hidden = true;
+        successPanel.hidden = false;
+        successPanel.focus();
+        if (statusEl) statusEl.textContent = 'Message sent successfully.';
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      }, 850);
     });
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        form.reset();
+        form.hidden = false;
+        successPanel.hidden = true;
+        fields.forEach((field) => showError(field, false));
+        form.elements.name.focus();
+      });
+    }
+  }
+
+  /* Social links are placeholders until real profiles exist — clicks are
+     acknowledged, not left to jump the page to the top. */
+  function initPlaceholderLinks() {
+    document.querySelectorAll('a[href="#"]').forEach((link) => {
+      link.addEventListener('click', (e) => e.preventDefault());
+    });
+  }
+
+  /* After a nav link scrolls a section into view, move focus to it so
+     keyboard and screen-reader users land where the page visually does. */
+  function initAnchorFocus() {
+    document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach((link) => {
+      link.addEventListener('click', () => {
+        const target = document.getElementById(link.getAttribute('href').slice(1));
+        if (!target) return;
+        window.setTimeout(() => {
+          target.setAttribute('tabindex', '-1');
+          target.focus({ preventScroll: true });
+        }, prefersReducedMotion ? 0 : 550);
+      });
+    });
+  }
+
+  function initFooterYear() {
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  }
 });
