@@ -1,305 +1,682 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABEI Solutions | Premium Website Design & Digital Agency</title>
-    <meta name="description" content="ABEI Solutions creates modern, high-converting websites for businesses that demand a professional, trustworthy, and established online presence.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABEI Solutions — Premium Website Design & Development Studio</title>
+<meta name="description" content="ABEI Solutions designs and builds premium, high-converting websites for restaurants, hotels, real estate, automotive brands and local businesses.">
+<meta name="theme-color" content="#F1F1EE">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="ABEI Solutions — Premium Website Design & Development Studio">
+<meta property="og:description" content="Modern, high-converting websites for businesses that want to look more professional, trustworthy and established online.">
+<meta property="og:url" content="https://www.abeisolutions.com">
+<!-- Add a real hosted image here before deploying -->
+<meta property="og:image" content="https://www.abeisolutions.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121316'/%3E%3Crect x='14' y='16' width='27' height='20' rx='3' fill='none' stroke='%23F1F1EE' stroke-width='3'/%3E%3Crect x='23' y='28' width='27' height='20' rx='3' fill='%23121316' stroke='%23F1F1EE' stroke-width='3'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "ABEI Solutions",
+  "description": "Premium website design and development studio for restaurants, hotels, real estate, automotive brands and local businesses.",
+  "url": "https://www.abeisolutions.com",
+  "email": "hello@abeisolutions.com",
+  "areaServed": "Worldwide"
+}
+</script>
 </head>
 <body>
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
 
-    <header class="header" id="header">
-        <div class="nav-container">
-            <a href="#" class="logo" aria-label="ABEI Solutions Home">ABEI.</a>
-            <nav class="nav-links" id="nav-links">
-                <a href="#work" class="nav-link">Work</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#process" class="nav-link">Process</a>
-                <a href="#about" class="nav-link">About</a>
-            </nav>
-            <a href="#contact" class="btn btn-primary magnetic" data-magnetic>Start a Project</a>
-            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-bar">
+    <a class="logo" href="#top" aria-label="ABEI Solutions — back to top">
+      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="3" y="7" width="19" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+        <rect x="10" y="13" width="19" height="14" rx="3" class="logo-mark-front" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <span class="logo-word">ABEI<span class="logo-sub">Solutions</span></span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#contact" class="btn btn-primary btn-sm">Start a Project</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-head">
+    <span class="logo-word">ABEI<span class="logo-sub">Solutions</span></span>
+    <button class="mobile-menu-close" id="mobileMenuClose" type="button" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav aria-label="Mobile">
+    <ul class="mobile-nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <a href="#contact" class="btn btn-primary">Start a Project</a>
+</div>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="hero-kicker" style="--d:0">A web design &amp; development studio</p>
+        <h1 class="hero-title" style="--d:1">Websites that open doors, not close tabs.</h1>
+        <p class="hero-sub" style="--d:2">We design and build premium websites for businesses that want to look as credible online as they are in person.</p>
+        <div class="hero-actions" style="--d:3">
+          <a href="#contact" class="btn btn-primary" id="heroCta">Start a Project</a>
+          <a href="#work" class="btn btn-secondary">View Our Work</a>
         </div>
-    </header>
+      </div>
 
-    <main>
-        <section class="hero section-padding">
-            <div class="container hero-grid">
-                <div class="hero-content reveal">
-                    <span class="eyebrow">Premium Digital Agency</span>
-                    <h1 class="hero-title">Your business deserves a <br>better first impression.</h1>
-                    <p class="hero-description">We engineer high-performance, visually striking websites for businesses that refuse to blend in. Precision design. Strategic conversion. Flawless code.</p>
-                    <div class="hero-actions">
-                        <a href="#contact" class="btn btn-primary magnetic" data-magnetic>Start a Project</a>
-                        <a href="#work" class="btn btn-secondary">View Our Work</a>
-                    </div>
+      <div class="hero-visual" aria-hidden="true" style="--d:4">
+        <div class="mock-slot mock-slot--1" data-depth="0.5">
+          <div class="mock-float">
+            <div class="browser-mock browser-mock--hero browser-mock--haven">
+              <div class="browser-chrome">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <div class="browser-url">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V8a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+                  havenresort.com
                 </div>
-                <div class="hero-visual reveal" style="transition-delay: 0.2s;">
-                    <div class="ui-cascade">
-                        <div class="ui-card card-1">
-                            <div class="skeleton-header"></div>
-                            <div class="skeleton-image"></div>
-                            <div class="skeleton-text"></div>
-                        </div>
-                        <div class="ui-card card-2">
-                            <div class="skeleton-nav"></div>
-                            <div class="skeleton-grid">
-                                <div></div><div></div><div></div>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+              <div class="browser-page">
+                <div class="page-nav">
+                  <span class="page-logo"></span>
+                  <span class="page-links"><span class="page-link"></span><span class="page-link"></span><span class="page-link"></span></span>
                 </div>
+                <div class="page-hero">
+                  <span class="page-heading-line"></span>
+                  <span class="page-heading-line short"></span>
+                  <span class="page-text-line"></span>
+                  <span class="page-cta"></span>
+                </div>
+                <div class="page-media"></div>
+              </div>
             </div>
-        </section>
-
-        <section class="trust section-padding">
-            <div class="container reveal">
-                <p class="trust-heading">Engineered for businesses that take their digital presence seriously.</p>
-                <div class="industry-grid">
-                    <span>Restaurants</span>
-                    <span class="dot"></span>
-                    <span>Automotive</span>
-                    <span class="dot"></span>
-                    <span>Real Estate</span>
-                    <span class="dot"></span>
-                    <span>Hospitality</span>
-                    <span class="dot"></span>
-                    <span>Studios</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="work" class="portfolio section-padding">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2 class="section-title">Selected Works</h2>
-                    <p class="section-subtitle">A demonstration of our capabilities.</p>
-                </div>
-                
-                <div class="portfolio-grid">
-                    <article class="project-card reveal">
-                        <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1974&auto=format&fit=crop');">
-                            <div class="project-overlay">
-                                <span class="view-project">View Case Study</span>
-                            </div>
-                        </div>
-                        <div class="project-meta">
-                            <h3 class="project-title">Maison Noir</h3>
-                            <p class="project-category">Luxury Restaurant</p>
-                        </div>
-                    </article>
-
-                    <article class="project-card reveal" style="transition-delay: 0.1s;">
-                        <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop');">
-                            <div class="project-overlay">
-                                <span class="view-project">View Case Study</span>
-                            </div>
-                        </div>
-                        <div class="project-meta">
-                            <h3 class="project-title">DriveHaus</h3>
-                            <p class="project-category">Automotive Dealership</p>
-                        </div>
-                    </article>
-
-                    <article class="project-card reveal">
-                        <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop');">
-                            <div class="project-overlay">
-                                <span class="view-project">View Case Study</span>
-                            </div>
-                        </div>
-                        <div class="project-meta">
-                            <h3 class="project-title">Besfort Studio</h3>
-                            <p class="project-category">Wedding Photography</p>
-                        </div>
-                    </article>
-
-                    <article class="project-card reveal" style="transition-delay: 0.1s;">
-                        <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop');">
-                            <div class="project-overlay">
-                                <span class="view-project">View Case Study</span>
-                            </div>
-                        </div>
-                        <div class="project-meta">
-                            <h3 class="project-title">UrbanKey</h3>
-                            <p class="project-category">Premium Real Estate</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="services section-padding">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2 class="section-title">Our Capabilities</h2>
-                </div>
-                <div class="services-list">
-                    <div class="service-item reveal">
-                        <div class="service-index">01</div>
-                        <div class="service-content">
-                            <h3 class="service-title">Website Design</h3>
-                            <p class="service-desc">Custom digital experiences designed meticulously around your business, your goals, and your target audience.</p>
-                        </div>
-                    </div>
-                    <div class="service-item reveal">
-                        <div class="service-index">02</div>
-                        <div class="service-content">
-                            <h3 class="service-title">Front-End Development</h3>
-                            <p class="service-desc">Responsive, lightning-fast, and modern code architectures built from the ground up for superior performance.</p>
-                        </div>
-                    </div>
-                    <div class="service-item reveal">
-                        <div class="service-index">03</div>
-                        <div class="service-content">
-                            <h3 class="service-title">Conversion Strategy</h3>
-                            <p class="service-desc">Clear user journeys and strategic calls-to-action specifically engineered to turn passive visitors into active inquiries.</p>
-                        </div>
-                    </div>
-                    <div class="service-item reveal">
-                        <div class="service-index">04</div>
-                        <div class="service-content">
-                            <h3 class="service-title">Digital Redesign</h3>
-                            <p class="service-desc">Transforming outdated, underperforming websites into modern, authoritative digital assets that command respect.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="why-abei section-padding">
-            <div class="container">
-                <div class="why-grid">
-                    <div class="why-text reveal">
-                        <h2 class="section-title">Built differently.</h2>
-                        <p class="section-subtitle">We don't use templates. We don't cut corners. We build digital authority.</p>
-                    </div>
-                    <div class="principles-grid">
-                        <div class="principle reveal">
-                            <h4>Custom, never cookie-cutter.</h4>
-                            <p>Every pixel is intentionally placed. Your brand is unique, and your website should reflect that exclusivity.</p>
-                        </div>
-                        <div class="principle reveal" style="transition-delay: 0.1s;">
-                            <h4>Built for every screen.</h4>
-                            <p>A flawless, mobile-first responsive experience. We ensure your business looks perfect on a 4K monitor and a smartphone.</p>
-                        </div>
-                        <div class="principle reveal">
-                            <h4>Focused on the user.</h4>
-                            <p>Design decisions are backed by data. We build intuitive structures based on how people actually interact with the web.</p>
-                        </div>
-                        <div class="principle reveal" style="transition-delay: 0.1s;">
-                            <h4>Engineered to scale.</h4>
-                            <p>Clean code and modular architectures mean your website easily adapts and grows alongside your business.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="process" class="process section-padding">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2 class="section-title">Our Methodology</h2>
-                </div>
-                <div class="process-timeline">
-                    <div class="process-step reveal">
-                        <div class="step-num">01</div>
-                        <h4>Discover</h4>
-                        <p>We analyze your business, your audience, and your primary objectives.</p>
-                    </div>
-                    <div class="process-step reveal" style="transition-delay: 0.1s;">
-                        <div class="step-num">02</div>
-                        <h4>Design</h4>
-                        <p>We craft the visual direction, typography, and core user experience.</p>
-                    </div>
-                    <div class="process-step reveal" style="transition-delay: 0.2s;">
-                        <div class="step-num">03</div>
-                        <h4>Build</h4>
-                        <p>We translate the design into semantic, fast, and responsive code.</p>
-                    </div>
-                    <div class="process-step reveal" style="transition-delay: 0.3s;">
-                        <div class="step-num">04</div>
-                        <h4>Launch</h4>
-                        <p>Rigorous QA testing, deployment, and seamless handover.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact section-padding">
-            <div class="container contact-grid">
-                <div class="contact-text reveal">
-                    <h2 class="hero-title">Ready to make your website work harder?</h2>
-                    <p class="hero-description">Let's discuss how we can elevate your digital presence. Fill out the inquiry form, and our lead designer will be in touch within 24 hours.</p>
-                    <a href="mailto:hello@abeisolutions.com" class="email-link">hello@abeisolutions.com</a>
-                </div>
-                <div class="contact-form-container reveal" style="transition-delay: 0.2s;">
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" required placeholder="John Doe">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" required placeholder="john@company.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="type">Project Type</label>
-                            <select id="type" required>
-                                <option value="" disabled selected>Select an option</option>
-                                <option value="new">New Website</option>
-                                <option value="redesign">Website Redesign</option>
-                                <option value="ecommerce">E-Commerce</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Project Details</label>
-                            <textarea id="message" rows="4" required placeholder="Tell us about your goals..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100 magnetic" data-magnetic>Submit Inquiry</button>
-                        <p id="form-success" class="form-success-msg hidden">Thank you. Your inquiry has been received.</p>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="#" class="logo">ABEI.</a>
-                <p>Premium website design & digital solutions for businesses that demand excellence.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Navigation</h4>
-                <a href="#work">Work</a>
-                <a href="#services">Services</a>
-                <a href="#process">Process</a>
-            </div>
-            <div class="footer-links">
-                <h4>Social</h4>
-                <a href="#">LinkedIn</a>
-                <a href="#">Twitter / X</a>
-                <a href="#">Instagram</a>
-            </div>
+          </div>
         </div>
-        <div class="container footer-bottom">
-            <p>&copy; <span id="year"></span> ABEI Solutions. All rights reserved.</p>
-            <p>Designed to convert.</p>
-        </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="mock-slot mock-slot--2" data-depth="0.85">
+          <div class="mock-float">
+            <div class="browser-mock browser-mock--hero browser-mock--drive">
+              <div class="browser-chrome">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <div class="browser-url">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V8a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+                  drivehaus.com
+                </div>
+              </div>
+              <div class="browser-page">
+                <div class="page-nav">
+                  <span class="page-logo"></span>
+                  <span class="page-links"><span class="page-link"></span><span class="page-link"></span><span class="page-link"></span></span>
+                </div>
+                <div class="page-hero">
+                  <span class="page-heading-line"></span>
+                  <span class="page-heading-line short"></span>
+                  <span class="page-text-line"></span>
+                  <span class="page-cta"></span>
+                </div>
+                <div class="page-media"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mock-slot mock-slot--3" data-depth="1.15">
+          <div class="mock-float">
+            <div class="browser-mock browser-mock--hero browser-mock--noir">
+              <div class="browser-chrome">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <div class="browser-url">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V8a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+                  maisonnoir.com
+                </div>
+              </div>
+              <div class="browser-page">
+                <div class="page-nav">
+                  <span class="page-logo"></span>
+                  <span class="page-links"><span class="page-link"></span><span class="page-link"></span><span class="page-link"></span></span>
+                </div>
+                <div class="page-hero">
+                  <span class="page-heading-line"></span>
+                  <span class="page-heading-line short"></span>
+                  <span class="page-text-line"></span>
+                  <span class="page-cta"></span>
+                </div>
+                <div class="page-media"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust" aria-labelledby="trust-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="trust-heading">Built for businesses that take their online presence seriously.</h2>
+        <p class="section-sub">We work across a focused set of industries — not everything, but the ones we understand deeply.</p>
+      </div>
+    </div>
+    <div class="marquee">
+      <div class="marquee-track">
+        <span class="marquee-item">Restaurants</span>
+        <span class="marquee-item">Hotels &amp; Resorts</span>
+        <span class="marquee-item">Automotive</span>
+        <span class="marquee-item">Photography</span>
+        <span class="marquee-item">Real Estate</span>
+        <span class="marquee-item">Local Businesses</span>
+        <span class="marquee-item" aria-hidden="true">Restaurants</span>
+        <span class="marquee-item" aria-hidden="true">Hotels &amp; Resorts</span>
+        <span class="marquee-item" aria-hidden="true">Automotive</span>
+        <span class="marquee-item" aria-hidden="true">Photography</span>
+        <span class="marquee-item" aria-hidden="true">Real Estate</span>
+        <span class="marquee-item" aria-hidden="true">Local Businesses</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="work" aria-labelledby="work-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="work-heading">Concept projects, built the way we'd build yours.</h2>
+        <p class="section-sub">Six fictional businesses and six different design problems, each treated with the same care as a real client project.</p>
+      </div>
+
+      <div class="portfolio-grid">
+
+        <article class="project-card col-7">
+          <div class="project-visual">
+            <div class="browser-mock browser-mock--card browser-mock--noir">
+              <div class="browser-chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <div class="browser-url"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V8a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>maisonnoir.com</div>
+              </div>
+              <div class="browser-page">
+                <div class="page-nav"><span class="page-logo"></span><span class="page-links"><span class="page-link"></span><span class="page-link"></span><span class="page-link"></span></span></div>
+                <div class="page-hero"><span class="page-heading-line"></span><span class="page-heading-line short"></span><span class="page-text-line"></span><span class="page-cta"></span></div>
+                <div class="page-media"></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-meta">
+            <p class="project-category">Fine dining restaurant</p>
+            <h3 class="project-title">Maison Noir</h3>
+            <p class="project-desc">A moody, editorial site built around imagery, ambience and a frictionless reservation flow.</p>
+            <p class="project-tags">Reservations, editorial layout, custom typography</p>
+          </div>
+        </article>
+
+        <article class="project-card col-5">
+          <div class="project-visual">
+            <div class="browser-mock browser-mock--card browser-mock--haven">
+              <div class="browser-chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <div class="browser-url"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V8a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>havenresort.com</div>
+              </div>
+              <div class="browser-page">
+                <div class="page-nav"><span class="page-logo"></span><span class="page-links"><span class="page-link"></span><span class="page-link"></span><span class="page-link"></span></span></div>
+                <div class="page-hero"><span class="page-heading-line"></span><span class="page-heading-line short"></span><span class="page-text-line"></span><span class="page-cta"></span></div>
+                <div class="page-media"></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-meta">
+            <p class="project-category">Boutique hotel &amp; resort</p>
+            <h3 class="project-title">Haven</h3>
+            <p class="project-desc">A calm, spacious layout that mirrors the experience of staying there.</p>
+            <p class="project-tags">Booking flow, visual storytelling, multi-language ready</p>
+          </div>
+        </article>
+
+        <article class="project-card col-4">
+          <div class="project-visual">
+            <div class="browser-mock browser-mock--card browser-mock--drive">
+              <div class="browser-chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <div class="browser-url"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V8a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>drivehaus.com</div>
+              </div>
+              <div class="browser-page">
+                <div class="page-nav"><span class="page-logo"></span><span class="page-links"><span class="page-link"></span><span class="page-link"></span><span class="page-link"></span></span></div>
+                <div class="page-hero"><span class="page-heading-line"></span><span class="page-heading-line short"></span><span class="page-text-line"></span><span class="page-cta"></span></div>
+                <div class="page-media"></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-meta">
+            <p class="project-category">Automotive dealership</p>
+            <h3 class="project-title">DriveHaus</h3>
+            <p class="project-desc">A fast, spec-driven inventory experience for people who already know what they want.</p>
+            <p class="project-tags">Inventory filtering, dealer integration</p>
+          </div>
+        </article>
+
+        <article class="project-card col-4">
+          <div class="project-visual">
+            <div class="browser-mock browser-mock--card browser-mock--besfort">
+              <div class="browser-chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <div class="browser-url"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V8a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>besfortstudio.com</div>
+              </div>
+              <div class="browser-page">
+                <div class="page-nav"><span class="page-logo"></span><span class="page-links"><span class="page-link"></span><span class="page-link"></span><span class="page-link"></span></span></div>
+                <div class="page-hero"><span class="page-heading-line"></span><span class="page-heading-line short"></span><span class="page-text-line"></span><span class="page-cta"></span></div>
+                <div class="page-media"></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-meta">
+            <p class="project-category">Wedding photography</p>
+            <h3 class="project-title">Besfort Studio</h3>
+            <p class="project-desc">An image-first portfolio designed to sell a feeling before a single word is read.</p>
+            <p class="project-tags">Gallery system, storytelling</p>
+          </div>
+        </article>
+
+        <article class="project-card col-4">
+          <div class="project-visual">
+            <div class="browser-mock browser-mock--card browser-mock--urbankey">
+              <div class="browser-chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <div class="browser-url"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V8a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>urbankey.com</div>
+              </div>
+              <div class="browser-page">
+                <div class="page-nav"><span class="page-logo"></span><span class="page-links"><span class="page-link"></span><span class="page-link"></span><span class="page-link"></span></span></div>
+                <div class="page-hero"><span class="page-heading-line"></span><span class="page-heading-line short"></span><span class="page-text-line"></span><span class="page-cta"></span></div>
+                <div class="page-media"></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-meta">
+            <p class="project-category">Real estate</p>
+            <h3 class="project-title">UrbanKey</h3>
+            <p class="project-desc">A listings platform built around fast search and serious buyers, not just browsing.</p>
+            <p class="project-tags">Property search, map integration</p>
+          </div>
+        </article>
+
+        <article class="project-card col-12 project-card--featured">
+          <div class="project-visual">
+            <div class="browser-mock browser-mock--card browser-mock--xl browser-mock--fieldhouse">
+              <div class="browser-chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <div class="browser-url"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V8a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>fieldhouse.club</div>
+              </div>
+              <div class="browser-page">
+                <div class="page-nav"><span class="page-logo"></span><span class="page-links"><span class="page-link"></span><span class="page-link"></span><span class="page-link"></span></span></div>
+                <div class="page-hero"><span class="page-heading-line"></span><span class="page-heading-line short"></span><span class="page-text-line"></span><span class="page-cta"></span></div>
+                <div class="page-media"></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-meta">
+            <p class="project-category">Local fitness studio</p>
+            <h3 class="project-title">Fieldhouse</h3>
+            <p class="project-desc">A high-energy site built to convert first-time visitors into first-class bookings.</p>
+            <p class="project-tags">Class scheduling, membership CTA, mobile-first</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="services-heading">Everything your website actually needs.</h2>
+        <p class="section-sub">No bloated packages — just the work that makes a website worth visiting, and worth finding.</p>
+      </div>
+
+      <div class="services-list">
+
+        <div class="service-row">
+          <h3><button class="service-header" type="button" aria-expanded="false" aria-controls="panel-1" id="header-1">
+            <span class="service-name">Website Design</span>
+            <span class="service-teaser">A custom design system built around your brand and your customers.</span>
+            <span class="service-icon" aria-hidden="true"><span></span><span></span></span>
+          </button></h3>
+          <div class="service-panel" id="panel-1" role="region" aria-labelledby="header-1">
+            <div class="service-panel-inner">
+              <p class="service-desc">We design every page around how your specific customers browse and decide — not a generic layout reused across clients.</p>
+              <ul class="service-included">
+                <li>Visual identity direction</li>
+                <li>Custom page layouts</li>
+                <li>Content &amp; copy structure</li>
+                <li>Design handoff files</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <h3><button class="service-header" type="button" aria-expanded="false" aria-controls="panel-2" id="header-2">
+            <span class="service-name">Development</span>
+            <span class="service-teaser">Clean, fast, modern front-end code — built to last.</span>
+            <span class="service-icon" aria-hidden="true"><span></span><span></span></span>
+          </button></h3>
+          <div class="service-panel" id="panel-2" role="region" aria-labelledby="header-2">
+            <div class="service-panel-inner">
+              <p class="service-desc">Every site is hand-coded for speed and stability, without the bloat that comes from page builders and heavy frameworks.</p>
+              <ul class="service-included">
+                <li>Semantic, accessible markup</li>
+                <li>Cross-browser testing</li>
+                <li>Performance optimization</li>
+                <li>Clean, documented code</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <h3><button class="service-header" type="button" aria-expanded="false" aria-controls="panel-3" id="header-3">
+            <span class="service-name">Mobile Optimization</span>
+            <span class="service-teaser">Designed mobile-first, not squeezed in as an afterthought.</span>
+            <span class="service-icon" aria-hidden="true"><span></span><span></span></span>
+          </button></h3>
+          <div class="service-panel" id="panel-3" role="region" aria-labelledby="header-3">
+            <div class="service-panel-inner">
+              <p class="service-desc">We design and test on real breakpoints, not just a resized browser window, so the experience holds up on any device.</p>
+              <ul class="service-included">
+                <li>Touch-friendly interfaces</li>
+                <li>Real-device testing</li>
+                <li>Adaptive layouts</li>
+                <li>Readable typography at every size</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <h3><button class="service-header" type="button" aria-expanded="false" aria-controls="panel-4" id="header-4">
+            <span class="service-name">Conversion-Focused Design</span>
+            <span class="service-teaser">Structure and calls-to-action built to turn visits into inquiries.</span>
+            <span class="service-icon" aria-hidden="true"><span></span><span></span></span>
+          </button></h3>
+          <div class="service-panel" id="panel-4" role="region" aria-labelledby="header-4">
+            <div class="service-panel-inner">
+              <p class="service-desc">Good design should do more than look good — every section is structured to guide a visitor toward contacting you.</p>
+              <ul class="service-included">
+                <li>Clear visual hierarchy</li>
+                <li>Strategic CTA placement</li>
+                <li>Friction-free contact forms</li>
+                <li>Behavior-informed layout</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <h3><button class="service-header" type="button" aria-expanded="false" aria-controls="panel-5" id="header-5">
+            <span class="service-name">Website Redesign</span>
+            <span class="service-teaser">A modern replacement for a website that's stopped working for you.</span>
+            <span class="service-icon" aria-hidden="true"><span></span><span></span></span>
+          </button></h3>
+          <div class="service-panel" id="panel-5" role="region" aria-labelledby="header-5">
+            <div class="service-panel-inner">
+              <p class="service-desc">We rebuild outdated websites from the ground up — keeping what works, replacing what doesn't, and modernizing the rest.</p>
+              <ul class="service-included">
+                <li>Full design audit</li>
+                <li>Content migration</li>
+                <li>Modern visual refresh</li>
+                <li>SEO-conscious rebuild</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <h3><button class="service-header" type="button" aria-expanded="false" aria-controls="panel-6" id="header-6">
+            <span class="service-name">Maintenance &amp; Updates</span>
+            <span class="service-teaser">Ongoing support once your website is live.</span>
+            <span class="service-icon" aria-hidden="true"><span></span><span></span></span>
+          </button></h3>
+          <div class="service-panel" id="panel-6" role="region" aria-labelledby="header-6">
+            <div class="service-panel-inner">
+              <p class="service-desc">Websites need small updates over time. We handle the changes so you don't have to think about them.</p>
+              <ul class="service-included">
+                <li>Content updates</li>
+                <li>Security &amp; software updates</li>
+                <li>Small design iterations</li>
+                <li>Priority support window</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="process-heading">A process built to remove guesswork.</h2>
+        <p class="section-sub">Five stages. One point of contact. No surprises along the way.</p>
+      </div>
+
+      <div class="process-list">
+        <div class="process-line"><div class="process-line-fill" id="processFill"></div></div>
+
+        <div class="process-step">
+          <span class="process-num">01</span>
+          <div class="process-body">
+            <h3>Discover</h3>
+            <p>We start by understanding your business, your customers, and what the website actually needs to achieve.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="process-num">02</span>
+          <div class="process-body">
+            <h3>Design</h3>
+            <p>We design the visual direction and user experience around your brand and your customers' habits.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="process-num">03</span>
+          <div class="process-body">
+            <h3>Build</h3>
+            <p>The design gets built into a fast, responsive website — coded clean, from scratch.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="process-num">04</span>
+          <div class="process-body">
+            <h3>Refine</h3>
+            <p>We test across real devices, fix what needs fixing, and polish every detail.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="process-num">05</span>
+          <div class="process-body">
+            <h3>Launch</h3>
+            <p>Your website goes live, with a walkthrough of everything you need to know.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about" aria-labelledby="about-heading">
+    <div class="container about-grid">
+      <div class="section-head about-head">
+        <h2 id="about-heading">Considered. Not templated.</h2>
+        <p class="section-sub">Anyone can launch a website in an afternoon. We design ones that actually hold up.</p>
+      </div>
+
+      <div class="principle-list">
+        <div class="principle">
+          <h3 class="principle-title">Custom, not cookie-cutter</h3>
+          <p class="principle-text">Every project starts from a blank canvas — no recycled templates, no drag-and-drop kits. Just a website designed around your business specifically.</p>
+        </div>
+        <div class="principle">
+          <h3 class="principle-title">Designed to be remembered</h3>
+          <p class="principle-text">A generic layout won't make anyone remember your brand. We build a visual identity strong enough to stick.</p>
+        </div>
+        <div class="principle">
+          <h3 class="principle-title">Built for every screen</h3>
+          <p class="principle-text">More visitors will land on a phone than a desktop. We design mobile-first, then scale up — not the other way around.</p>
+        </div>
+        <div class="principle">
+          <h3 class="principle-title">Focused on how people browse</h3>
+          <p class="principle-text">Every layout decision is based on how people actually scroll, read and click — not on what looks nice in a mockup.</p>
+        </div>
+        <div class="principle">
+          <h3 class="principle-title">Built to grow</h3>
+          <p class="principle-text">Your website should get easier to improve over time, not harder. We build the structure to support that from day one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <h2 id="contact-heading">It's time your website started earning its keep.</h2>
+        <p class="section-sub">Tell us about your business and what you're trying to achieve — we'll take it from there.</p>
+        <a class="contact-email" href="mailto:hello@abeisolutions.com">hello@abeisolutions.com</a>
+      </div>
+
+      <div class="contact-form-wrap">
+        <form class="form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" class="field-input" autocomplete="name">
+            <span class="field-error" id="name-error" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="field-input" autocomplete="email">
+            <span class="field-error" id="email-error" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="businessType">Business type</label>
+            <select id="businessType" name="businessType" class="field-input field-select">
+              <option value="" disabled selected>Select one…</option>
+              <option value="restaurant">Restaurant</option>
+              <option value="hotel">Hotel / Resort</option>
+              <option value="automotive">Automotive</option>
+              <option value="photography">Photography</option>
+              <option value="real-estate">Real Estate</option>
+              <option value="local-service">Local Service Business</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="field-error" id="businessType-error" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="details">Project details</label>
+            <textarea id="details" name="details" class="field-input field-textarea" rows="4"></textarea>
+            <span class="field-error" id="details-error" role="alert"></span>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Send Project Details</button>
+          <p class="visually-hidden" id="formStatus" aria-live="polite"></p>
+        </form>
+
+        <div class="form-success" id="formSuccess" tabindex="-1" hidden>
+          <svg class="form-success-icon" viewBox="0 0 48 48" aria-hidden="true">
+            <circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M15 24.5l6 6 12-13.5" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>Message sent.</h3>
+          <p>Thanks for reaching out — we'll follow up shortly.</p>
+          <button type="button" class="btn btn-secondary" id="formReset">Send another message</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="#top" aria-label="ABEI Solutions — back to top">
+        <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="3" y="7" width="19" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+          <rect x="10" y="13" width="19" height="14" rx="3" class="logo-mark-front" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <span class="logo-word">ABEI<span class="logo-sub">Solutions</span></span>
+      </a>
+      <p class="footer-blurb">A small studio designing premium websites for businesses that want to be taken seriously online.</p>
+      <div class="footer-social">
+        <a href="#" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="7" r="2" fill="currentColor"/><circle cx="18" cy="7" r="2" fill="currentColor"/><circle cx="12" cy="17" r="2" fill="currentColor"/><path d="M7.6 8.2L11 15.4M16.4 8.2L13 15.4" stroke="currentColor" stroke-width="1.4"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col-title">Site</p>
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col-title">Services</p>
+      <ul>
+        <li>Website Design</li>
+        <li>Development</li>
+        <li>Mobile Optimization</li>
+        <li>Website Redesign</li>
+        <li>Maintenance &amp; Updates</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col-title">Contact</p>
+      <ul>
+        <li><a href="mailto:hello@abeisolutions.com">hello@abeisolutions.com</a></li>
+        <li>Remote-first, working with businesses everywhere.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; <span id="year"></span> ABEI Solutions. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
 </body>
 </html>
