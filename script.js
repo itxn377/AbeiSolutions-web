@@ -1,301 +1,150 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-  /* ==============================
-     ELEMENTS
-  ============================== */
-
-  const navbar = document.getElementById("navbar");
-
-  const languageToggle = document.getElementById("languageToggle");
-
-  const langEN = document.getElementById("langEN");
-  const langAL = document.getElementById("langAL");
-
-  const mobileMenu = document.getElementById("mobileMenu");
-  const mobileNavigation = document.getElementById("mobileNavigation");
-
-  const cursorGlow = document.querySelector(".cursor-glow");
-
-  const year = document.getElementById("year");
-
-  const languageElements = document.querySelectorAll("[data-en][data-al]");
-
-  const revealElements = document.querySelectorAll(".reveal");
-
-  const counters = document.querySelectorAll(".counter");
-
-
-  /* ==============================
-     CURRENT YEAR
-  ============================== */
-
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
-
-
-  /* ==============================
-     NAVBAR SCROLL EFFECT
-  ============================== */
-
-  window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 30) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
-
-  });
-
-
-  /* ==============================
-     MOBILE MENU
-  ============================== */
-
-  if (mobileMenu && mobileNavigation) {
-
-    mobileMenu.addEventListener("click", () => {
-
-      mobileNavigation.classList.toggle("active");
-
-    });
-
-
-    const mobileLinks = mobileNavigation.querySelectorAll("a");
-
-    mobileLinks.forEach((link) => {
-
-      link.addEventListener("click", () => {
-
-        mobileNavigation.classList.remove("active");
-
-      });
-
-    });
-
-  }
-
-
-  /* ==============================
-     LANGUAGE SYSTEM EN / AL
-  ============================== */
-
-  let currentLanguage = localStorage.getItem("abeiLanguage") || "en";
-
-
-  function updateLanguage(language) {
-
-    currentLanguage = language;
-
-
-    languageElements.forEach((element) => {
-
-      const translation = element.getAttribute(`data-${language}`);
-
-      if (translation) {
-        element.textContent = translation;
-      }
-
-    });
-
-
-    if (language === "en") {
-
-      langEN.classList.add("lang-active");
-      langAL.classList.remove("lang-active");
-
-      document.documentElement.lang = "en";
-
-    } else {
-
-      langAL.classList.add("lang-active");
-      langEN.classList.remove("lang-active");
-
-      document.documentElement.lang = "sq";
-
-    }
-
-
-    localStorage.setItem("abeiLanguage", language);
-
-  }
-
-
-  if (languageToggle) {
-
-    languageToggle.addEventListener("click", () => {
-
-      const newLanguage =
-        currentLanguage === "en" ? "al" : "en";
-
-      updateLanguage(newLanguage);
-
-    });
-
-  }
-
-
-  updateLanguage(currentLanguage);
-
-
-  /* ==============================
-     SCROLL REVEAL ANIMATION
-  ============================== */
-
-  const revealObserver = new IntersectionObserver(
-
-    (entries) => {
-
-      entries.forEach((entry) => {
-
-        if (entry.isIntersecting) {
-
-          entry.target.classList.add("active");
-
-          revealObserver.unobserve(entry.target);
-
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Current Year for Footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // 2. Mobile Menu Toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navLinks = document.getElementById('nav-links');
+    
+    mobileToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        // Simple animation for hamburger lines
+        const lines = mobileToggle.querySelectorAll('.line');
+        if (navLinks.classList.contains('active')) {
+            lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            lines[1].style.transform = 'rotate(-45deg) translate(4px, -4px)';
+        } else {
+            lines[0].style.transform = 'none';
+            lines[1].style.transform = 'none';
         }
-
-      });
-
-    },
-
-    {
-      threshold: 0.12
-    }
-
-  );
-
-
-  revealElements.forEach((element) => {
-
-    revealObserver.observe(element);
-
-  });
-
-
-  /* ==============================
-     COUNTER ANIMATION
-  ============================== */
-
-  const counterObserver = new IntersectionObserver(
-
-    (entries) => {
-
-      entries.forEach((entry) => {
-
-        if (!entry.isIntersecting) return;
-
-        const counter = entry.target;
-
-        const target = Number(
-          counter.getAttribute("data-target")
-        );
-
-        let current = 0;
-
-        const duration = 1000;
-
-        const incrementTime = 30;
-
-        const steps = duration / incrementTime;
-
-        const increment = target / steps;
-
-
-        const counterInterval = setInterval(() => {
-
-          current += increment;
-
-
-          if (current >= target) {
-
-            counter.textContent = target;
-
-            clearInterval(counterInterval);
-
-          } else {
-
-            counter.textContent =
-              Math.floor(current);
-
-          }
-
-        }, incrementTime);
-
-
-        counterObserver.unobserve(counter);
-
-      });
-
-    },
-
-    {
-      threshold: 0.5
-    }
-
-  );
-
-
-  counters.forEach((counter) => {
-
-    counterObserver.observe(counter);
-
-  });
-
-
-  /* ==============================
-     CURSOR GLOW
-  ============================== */
-
-  if (cursorGlow && window.matchMedia("(hover: hover)").matches) {
-
-    window.addEventListener("mousemove", (event) => {
-
-      cursorGlow.style.left = `${event.clientX}px`;
-
-      cursorGlow.style.top = `${event.clientY}px`;
-
     });
 
-  }
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            const lines = mobileToggle.querySelectorAll('.line');
+            lines[0].style.transform = 'none';
+            lines[1].style.transform = 'none';
+        });
+    });
 
+    // 3. Sticky Header Background on Scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
 
-  /* ==============================
-     SMOOTH INTERNAL LINKS
-  ============================== */
+    // 4. Scroll Reveal Animation using Intersection Observer
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const internalLinks =
-    document.querySelectorAll('a[href^="#"]');
-
-
-  internalLinks.forEach((link) => {
-
-    link.addEventListener("click", (event) => {
-
-      const targetId = link.getAttribute("href");
-
-      const target =
-        document.querySelector(targetId);
-
-
-      if (target) {
-
-        event.preventDefault();
-
-        target.scrollIntoView({
-
-          behavior: "smooth",
-          block: "start"
-
+    if (!prefersReducedMotion) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Run once
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
         });
 
-      }
+        revealElements.forEach(el => revealObserver.observe(el));
+    }
 
+    // 5. Custom Cursor Logic
+    if (window.matchMedia("(pointer: fine)").matches && !prefersReducedMotion) {
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+        
+        let mouseX = 0, mouseY = 0;
+        let outlineX = 0, outlineY = 0;
+        
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            // Dot follows exactly
+            cursorDot.style.left = `${mouseX}px`;
+            cursorDot.style.top = `${mouseY}px`;
+        });
+
+        // Smooth trailing effect for the outline using requestAnimationFrame
+        const animateCursor = () => {
+            let distX = mouseX - outlineX;
+            let distY = mouseY - outlineY;
+            
+            outlineX = outlineX + (distX * 0.15); // Adjust ease amount here
+            outlineY = outlineY + (distY * 0.15);
+            
+            cursorOutline.style.left = `${outlineX}px`;
+            cursorOutline.style.top = `${outlineY}px`;
+            
+            requestAnimationFrame(animateCursor);
+        };
+        animateCursor();
+    }
+
+    // 6. Magnetic Buttons (Subtle pull effect on hover)
+    const magneticElements = document.querySelectorAll('[data-magnetic]');
+    
+    if (!prefersReducedMotion) {
+        magneticElements.forEach(el => {
+            el.addEventListener('mousemove', (e) => {
+                const rect = el.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                // Keep movement subtle (max 15px)
+                el.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+            });
+
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'translate(0px, 0px)';
+                // Smooth return transition is handled by CSS var(--transition)
+            });
+        });
+    }
+
+    // 7. Mock Form Submission
+    const contactForm = document.getElementById('contactForm');
+    const successMsg = document.getElementById('form-success');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Visual loading state
+        submitBtn.textContent = 'Sending...';
+        submitBtn.style.opacity = '0.7';
+        
+        // Mock API call delay
+        setTimeout(() => {
+            contactForm.reset();
+            submitBtn.textContent = 'Submit Inquiry';
+            submitBtn.style.opacity = '1';
+            submitBtn.classList.add('hidden'); // hide button
+            
+            // Show success message
+            successMsg.classList.remove('hidden');
+            
+            // Hide message and show button again after 5 seconds
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+                submitBtn.classList.remove('hidden');
+            }, 5000);
+            
+        }, 1500);
     });
-
-  });
-
-
 });
